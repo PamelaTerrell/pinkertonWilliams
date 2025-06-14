@@ -26,6 +26,28 @@ const pastEvents = [
     
   },
 
+  {
+    id: 1,
+    title: 'Fundraiser 2025',
+    imageUrl: '/images/events/GW1.jpg',
+    
+  },
+
+  {
+    id: 1,
+    title: 'Fundraiser 2025',
+    imageUrl: '/images/events/BBQA.jpg',
+    
+  },
+
+  {
+    id: 1,
+    title: 'Fundraiser 2025',
+    imageUrl: '/images/events/BBQB.jpg',
+    
+  },
+
+
    {
     id: 1,
     title: 'Coca Cola Appreciation',
@@ -78,6 +100,13 @@ const pastEvents = [
   {
     id: 1,
     title: 'Knights Meat Market Appreciation',
+    imageUrl: '/images/events/Knightscert1.jpg',
+    
+  },
+
+  {
+    id: 1,
+    title: 'Knights Meat Market Appreciation',
     imageUrl: '/images/events/cert1.jpg',
     
   },
@@ -89,6 +118,12 @@ const pastEvents = [
     
   },
 
+  {
+    id: 1,
+    title: 'Volunteer Recognition',
+    imageUrl: '/images/events/pamCert.jpg',
+    
+  },
 
   // add more past events here as needed
 ];
