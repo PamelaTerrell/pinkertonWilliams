@@ -23,8 +23,73 @@ const pastEvents = [
     id: 1,
     title: 'Fundraiser 2025',
     imageUrl: '/images/events/fundraiser20.jpeg',
-    link: 'https://example.com/past-fundraiser',  // Replace with real URL or remove link if none
+    
   },
+
+   {
+    id: 1,
+    title: 'Coca Cola Appreciation',
+    imageUrl: '/images/events/flower10.jpg',
+    
+  },
+
+  {
+    id: 1,
+    title: 'Female Appreciation Ceremony',
+    imageUrl: '/images/events/flowers.jpg',
+    
+  },
+
+  {
+    id: 1,
+    title: 'Female Appreciation Ceremony',
+    imageUrl: '/images/events/flower2.jpg',
+    
+  },
+
+  {
+    id: 1,
+    title: 'Female Appreciation Ceremony',
+    imageUrl: '/images/events/flower3.jpg',
+    
+  },
+
+  {
+    id: 1,
+    title: 'Female Appreciation Ceremony',
+    imageUrl: '/images/events/flower4.jpg',
+    
+  },
+
+  {
+    id: 1,
+    title: 'Female Appreciation Ceremony',
+    imageUrl: '/images/events/flower5.jpg',
+    
+  },
+
+  {
+    id: 1,
+    title: 'Soldier Exodus',
+    imageUrl: '/images/events/airport5.jpg',
+    
+  },
+
+  {
+    id: 1,
+    title: 'Knights Meat Market Appreciation',
+    imageUrl: '/images/events/cert1.jpg',
+    
+  },
+
+  {
+    id: 1,
+    title: 'FPL Foods',
+    imageUrl: '/images/events/cert2.jpg',
+    
+  },
+
+
   // add more past events here as needed
 ];
 
