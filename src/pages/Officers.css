@@ -1,0 +1,37 @@
+.officers-container {
+    padding: 2rem;
+    text-align: center;
+    color: #e6edf3;
+    background-color: #0d1117;
+  }
+  
+  .officers-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+  
+  .officer-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 160px;
+  }
+  
+  .officer-photo {
+    width: 180px;
+    height: 180px;
+    object-fit: contain;         /* Keeps aspect ratio but fills circle */
+    object-position: center;   /* Ensures center of image is shown */
+    border-radius: 50%;
+    box-shadow: 0 0 8px rgba(37, 99, 235, 0.7);
+    margin-bottom: 0.5rem;
+  }
+  
+  
+  h1, h3, p {
+    margin: 0.3rem 0;
+  }
+  
