@@ -6,10 +6,10 @@ export default function NavBar() {
   return (
     <nav className="navbar">
       <div className="navbar-logo">
-        {/* Could use your DAV logo here */}
+        
         <Link to="/">
           <img src="/src/assets/davclear.png" alt="DAV Chapter 18" className="nav-logo" />
-        </Link>
+        </Link>    CHAPTER 18  PINKERTON WILLIAMS
       </div>
       <ul className="nav-links">
         <li><Link to="/" className="nav-link">Home</Link></li>
