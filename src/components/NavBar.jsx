@@ -1,23 +1,31 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import './NavBar.css';  // we'll create this
+import './NavBar.css';
 
 export default function NavBar() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <nav className="navbar">
-      <div className="navbar-logo">
+      <div className="navbar-container">
+        <Link to="/" className="navbar-logo">
+          <img src="/src/assets/davclear.png" alt="DAV Chapter 18" />
+        </Link>
         
-        <Link to="/">
-          <img src="/src/assets/davclear.png" alt="DAV Chapter 18" className="nav-logo" />
-        </Link>   
-      </div>
-      <ul className="nav-links">
-        <li><Link to="/" className="nav-link">Home</Link></li>
-        <li><Link to="/officers" className="nav-link">Officers</Link></li>
-        <li><Link to="/events" className="nav-link">Events</Link></li>
+        <button
+          className="menu-toggle"
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle Menu"
+        >
+          &#9776;
+        </button>
 
-        
-      </ul>
+        <ul className={`nav-links ${menuOpen ? 'open' : ''}`}>
+          <li><Link to="/" className="nav-link">Home</Link></li>
+          <li><Link to="/officers" className="nav-link">Officers</Link></li>
+          <li><Link to="/events" className="nav-link">Events</Link></li>
+        </ul>
+      </div>
     </nav>
   );
 }
