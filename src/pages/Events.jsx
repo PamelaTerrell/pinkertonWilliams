@@ -1,9 +1,8 @@
 import React from 'react';
 import './Events.css';
 
-// Example event data — update with your real data and image URLs
-const events = [
-
+// Upcoming events data
+const upcomingEvents = [
   {
     id: 4,
     title: '2025 National Convention',
@@ -18,26 +17,59 @@ const events = [
   },
 ];
 
+// Past events data
+const pastEvents = [
+  {
+    id: 1,
+    title: 'Fundraiser 2025',
+    imageUrl: '/images/events/fundraiser20.jpeg',
+    link: 'https://example.com/past-fundraiser',  // Replace with real URL or remove link if none
+  },
+  // add more past events here as needed
+];
+
 export default function Events() {
   return (
     <div className="events-container">
       <h1>DAV Chapter 18 - Augusta, GA</h1>
-      <h2>Upcoming Events</h2>
-      <div className="events-grid">
-        {events.map(({ id, title, imageUrl, link }) => (
-          <a
-            key={id}
-            href={link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="event-card"
-            title={title}
-          >
-            <img src={imageUrl} alt={title} className="event-image" />
-            <p className="event-title">{title}</p>
-          </a>
-        ))}
-      </div>
+
+      <section>
+        <h2>Upcoming Events</h2>
+        <div className="events-grid">
+          {upcomingEvents.map(({ id, title, imageUrl, link }) => (
+            <a
+              key={id}
+              href={link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="event-card"
+              title={title}
+            >
+              <img src={imageUrl} alt={title} className="event-image" />
+              <p className="event-title">{title}</p>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      <section>
+        <h2>Past Events</h2>
+        <div className="events-grid past-events">
+          {pastEvents.map(({ id, title, imageUrl, link }) => (
+            <a
+              key={id}
+              href={link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="event-card"
+              title={title}
+            >
+              <img src={imageUrl} alt={title} className="event-image" />
+              <p className="event-title">{title}</p>
+            </a>
+          ))}
+        </div>
+      </section>
     </div>
   );
 }
