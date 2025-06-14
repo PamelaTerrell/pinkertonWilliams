@@ -21,28 +21,28 @@ const upcomingEvents = [
 const pastEvents = [
   {
     id: 1,
-    title: 'Fundraiser 2025',
+    title: 'Fundraiser',
     imageUrl: '/images/events/fundraiser20.jpeg',
     
   },
 
   {
     id: 1,
-    title: 'Fundraiser 2025',
+    title: 'Fundraiser',
     imageUrl: '/images/events/GW1.jpg',
     
   },
 
   {
     id: 1,
-    title: 'Fundraiser 2025',
+    title: 'Fundraiser',
     imageUrl: '/images/events/BBQA.jpg',
     
   },
 
   {
     id: 1,
-    title: 'Fundraiser 2025',
+    title: 'Fundraiser',
     imageUrl: '/images/events/BBQB.jpg',
     
   },
