@@ -15,6 +15,29 @@ body {
   .header {
     text-align: center;
   }
+
+  .location {
+    margin-top: 2rem;
+    background-color: #111827; /* example: a subtle dark background */
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    color: #e6edf3;
+    text-align: center;
+  }
+
+  .golden-image-container {
+    padding: 1rem; /* or whatever amount you prefer */
+    display: flex;
+    justify-content: center; /* centers the image horizontally */
+  }
+  
+  .golden-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px; /* optional, for rounded corners */
+  }
+  
+  
   
   .logo {
     width: 460px;

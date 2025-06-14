@@ -9,12 +9,13 @@ export default function NavBar() {
         
         <Link to="/">
           <img src="/src/assets/davclear.png" alt="DAV Chapter 18" className="nav-logo" />
-        </Link>    CHAPTER 18  PINKERTON WILLIAMS
+        </Link>   
       </div>
       <ul className="nav-links">
         <li><Link to="/" className="nav-link">Home</Link></li>
         <li><Link to="/officers" className="nav-link">Officers</Link></li>
-        <li><Link to="/meetings" className="nav-link">Meetings</Link></li>
+        <li><Link to="/events" className="nav-link">Events</Link></li>
+
         
       </ul>
     </nav>

@@ -1,0 +1,44 @@
+.events-container {
+    padding: 2rem;
+    text-align: center;
+    color: #e6edf3;
+    background-color: #0d1117;
+  }
+  
+  .events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  
+  .event-image {
+    width: 100%;
+    height: auto;        /* Let height adjust automatically */
+    object-fit: contain; /* Show entire image without cropping */
+    background-color: #0d1117; /* Match bg so empty space blends in */
+    border-radius: 8px 8px 0 0; /* Round top corners to match card */
+    max-height: 180px;   /* Optional max height to keep images from getting too tall */
+  }
+  
+  
+  .event-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(37, 99, 235, 1);
+  }
+  
+  .event-image {
+    width: 100%;
+    height: auto;        /* Let height adjust automatically */
+    object-fit: contain; /* Show entire image without cropping */
+    background-color: #0d1117; /* Match bg so empty space blends in */
+    border-radius: 8px 8px 0 0; /* Round top corners to match card */
+    max-height: 180px;   /* Optional max height to keep images from getting too tall */
+  }
+  
+  
+  .event-title {
+    margin: 0.5rem 0;
+    font-weight: 600;
+  }
+  

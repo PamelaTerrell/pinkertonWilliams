@@ -1,7 +1,8 @@
 import React from "react";
 import './Officers.css';
 
-// Replace with your actual officers' data and image paths
+
+
 const officers = [
   { id: 1, name: "Alvin Terrell", title: "Commander", photo: "/assets/officers/AT.JPG" },
   { id: 2, name: "Tracey Robinson", title: "Senior Vice Commander", photo: "/assets/officers/tracyrobinson.jpg" },
@@ -18,7 +19,8 @@ const officers = [
 export default function Officers() {
   return (
     <div className="officers-container">
-      <h1>Our Officers</h1>
+        <h1>DAV Chapter 18 - Augusta, GA</h1>
+      <h2>Our Officers</h2>
       <div className="officers-grid">
         {officers.map(({ id, name, title, photo }) => (
           <div key={id} className="officer-card">
