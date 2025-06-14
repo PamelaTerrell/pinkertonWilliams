@@ -28,10 +28,7 @@ export default function Home() {
         <button className="cta-button">Join Us</button>
       </section>
 
-      <footer className="footer">
-        <p>© 2016 DAV Chapter 18. All rights reserved.
-        </p>
-      </footer>
+    
     </div>
   );
 }
