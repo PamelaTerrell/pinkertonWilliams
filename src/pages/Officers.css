@@ -21,11 +21,12 @@
   }
   
   .officer-photo {
-    width: 180px;
-    height: 240px;
+    width: 200px;
+    height: 220px;
     object-fit: cover;         /* Keeps aspect ratio but fills circle */
-    object-position: 30% top;  /* Ensures center of image is shown */
+    object-position: 30% 20%;
     border-radius: 50%;
+    
     box-shadow: 0 0 8px rgba(37, 99, 235, 0.7);
     margin-bottom: 0.5rem;
     
