@@ -28,6 +28,20 @@ const pastEvents = [
 
   {
     id: 1,
+    title: 'Installations',
+    imageUrl: '/images/events/installation.jpg',
+    
+  },
+
+  {
+    id: 1,
+    title: 'Fundraiser',
+    imageUrl: '/images/events/FR8.jpg',
+    
+  },
+
+  {
+    id: 1,
     title: 'Fundraiser',
     imageUrl: '/images/events/GW1.jpg',
     
