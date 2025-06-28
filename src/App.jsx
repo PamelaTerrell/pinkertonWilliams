@@ -4,6 +4,7 @@ import Home from './pages/Home.jsx';
 import Officers from './pages/Officers.jsx';
 import Events from './pages/Events.jsx';
 import PurpleHeartHonoree from './pages/PurpleHeart.jsx';
+
 import NavBar from './components/NavBar.jsx';
 import Footer from './components/Footer.jsx';
 
