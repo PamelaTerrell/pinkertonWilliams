@@ -94,10 +94,16 @@ function PurpleHeartHonoree() {
 
 
   <img
-    src="/assets/certificates/army-commendation.jpg"
+    src="/ArComFeb1967.jpg"
     alt="Army Commendation Medal Certificate"
     className="certificate-image"
   />
+  <img
+    src="/ArComAug1967.jpg"
+    alt="Army Commendation Medal Certificate"
+    className="certificate-image"
+  />
+
 </div>
 
 
