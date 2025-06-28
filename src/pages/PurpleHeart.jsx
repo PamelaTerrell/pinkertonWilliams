@@ -66,7 +66,7 @@ function PurpleHeartHonoree() {
         supporting fellow veterans through Disabled American Veterans Chapter 18.
       </p>
       <img
-        src="/images/purple-heart-medal.png"
+        src="/purpleHeart.jpg"
         alt="Purple Heart Medal"
         className="medal-image"
       />
