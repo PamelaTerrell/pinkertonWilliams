@@ -86,6 +86,31 @@
     height: auto;
     filter: drop-shadow(0 3px 3px rgba(90, 42, 39, 0.5));
   }
+
+/* Certificates Section */
+.certificates-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  
+  .certificate-image {
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+    border: 2px solid #5a2a27;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(90, 42, 39, 0.3);
+    transition: transform 0.3s ease;
+  }
+  
+  .certificate-image:hover {
+    transform: scale(1.05);
+  }
+  
+
   
   /* Responsive tweaks */
   @media (max-width: 600px) {

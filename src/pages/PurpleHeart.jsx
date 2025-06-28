@@ -70,6 +70,37 @@ function PurpleHeartHonoree() {
         alt="Purple Heart Medal"
         className="medal-image"
       />
+
+<h3>Military Award Certificates</h3>
+<div className="certificates-container">
+  
+  <img
+    src="./purpleHeartCert.jpg"
+    alt="Purple Heart Certificate"
+    className="certificate-image"
+  />
+
+<img
+    src="/bronzeMay.jpg"
+    alt="Bronze Star Certificate"
+    className="certificate-image"
+  />
+
+<img
+    src="/bronzeStarAugust.jpg"
+    alt="Bronze Star Certificate"
+    className="certificate-image"
+  />
+
+
+  <img
+    src="/assets/certificates/army-commendation.jpg"
+    alt="Army Commendation Medal Certificate"
+    className="certificate-image"
+  />
+</div>
+
+
     </div>
   );
 }
