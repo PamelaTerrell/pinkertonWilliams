@@ -1,0 +1,109 @@
+/* Container styling */
+.honoree-container {
+    max-width: 720px;
+    margin: 3rem auto;
+    padding: 2rem 3rem;
+    background: #f9f9f9;
+    border: 1.5px solid #5a2a27; /* deep burgundy */
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(90, 42, 39, 0.3);
+    font-family: 'Merriweather', serif;
+    color: #3b2e2e;
+    line-height: 1.6;
+  }
+  
+  /* Title */
+  .honoree-container h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #5a2a27;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 2px rgba(90, 42, 39, 0.7);
+  }
+  
+  /* Subtitle / Name */
+  .honoree-container h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 1.8rem;
+    font-style: italic;
+    color: #4a2a28;
+  }
+  
+  /* Portrait image */
+  .honoree-photo {
+    display: block;
+    max-width: 220px;
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    margin: 0 auto 2rem auto;
+    box-shadow: 0 4px 15px rgba(90, 42, 39, 0.4);
+    border: 3px solid #5a2a27;
+  }
+  
+  /* Paragraphs */
+  .honoree-container p {
+    font-size: 1.125rem;
+    margin-bottom: 1.3rem;
+    text-align: justify;
+    text-indent: 2em;
+  }
+  
+  /* Awards list */
+  .award-list {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 1.5rem 0 2rem 0;
+    border-left: 5px solid #5a2a27;
+    background: #fff7f5;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(90, 42, 39, 0.1);
+  }
+  
+  .award-list li {
+    font-weight: 700;
+    color: #5a2a27;
+    padding: 0.7rem 1rem;
+    font-size: 1.1rem;
+    border-bottom: 1px solid #ddb4af;
+  }
+  
+  .award-list li:last-child {
+    border-bottom: none;
+  }
+  
+  /* Medal image */
+  .medal-image {
+    display: block;
+    margin: 2.5rem auto 0 auto;
+    max-width: 180px;
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 3px 3px rgba(90, 42, 39, 0.5));
+  }
+  
+  /* Responsive tweaks */
+  @media (max-width: 600px) {
+    .honoree-container {
+      padding: 1.5rem 1.5rem;
+    }
+  
+    .honoree-container h1 {
+      font-size: 2rem;
+    }
+  
+    .honoree-container h2 {
+      font-size: 1.5rem;
+    }
+  
+    .honoree-photo {
+      max-width: 150px;
+      margin-bottom: 1.5rem;
+    }
+  }
+  

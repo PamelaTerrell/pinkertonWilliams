@@ -24,22 +24,28 @@ export default function NavBar() {
         </button>
 
         <ul className={`nav-links ${menuOpen ? 'open' : ''}`}>
-          <li>
-            <Link to="/" className="nav-link" onClick={() => setMenuOpen(false)}>
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link to="/officers" className="nav-link" onClick={() => setMenuOpen(false)}>
-              Officers
-            </Link>
-          </li>
-          <li>
-            <Link to="/events" className="nav-link" onClick={() => setMenuOpen(false)}>
-              Events
-            </Link>
-          </li>
-        </ul>
+  <li>
+    <Link to="/" className="nav-link" onClick={() => setMenuOpen(false)}>
+      Home
+    </Link>
+  </li>
+  <li>
+    <Link to="/officers" className="nav-link" onClick={() => setMenuOpen(false)}>
+      Officers
+    </Link>
+  </li>
+  <li>
+    <Link to="/events" className="nav-link" onClick={() => setMenuOpen(false)}>
+      Events
+    </Link>
+  </li>
+  <li>
+    <Link to="/purple-heart-honoree" className="nav-link" onClick={() => setMenuOpen(false)}>
+      Purple Heart Honoree
+    </Link>
+  </li>
+</ul>
+
       </div>
     </nav>
   );

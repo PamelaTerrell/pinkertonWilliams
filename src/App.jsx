@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home.jsx';
 import Officers from './pages/Officers.jsx';
 import Events from './pages/Events.jsx';
+import PurpleHeartHonoree from './pages/PurpleHeart.jsx';
 import NavBar from './components/NavBar.jsx';
 import Footer from './components/Footer.jsx';
 
@@ -14,9 +15,10 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/officers" element={<Officers />} />
         <Route path="/events" element={<Events />} />
+        <Route path="/purple-heart-honoree" element={<PurpleHeartHonoree />} />
 
       </Routes>
-      <Footer /> {/* This ensures the footer is visible on all pages */}
+      <Footer /> 
     </BrowserRouter>
   );
 }
