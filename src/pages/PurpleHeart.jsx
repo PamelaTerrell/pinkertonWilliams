@@ -23,6 +23,16 @@ function PurpleHeartHonoree() {
         early hours of the morning. Viet Cong forces struck their position with
         81-millimeter mortar rounds while the unit was asleep.
       </p>
+
+      <img
+  src="/youngEddie.jpg"
+  alt="Eddie Thomas during his Vietnam service"
+  className="honoree-photo-small"
+/>
+<p className="photo-caption">
+  Eddie Thomas, 1961
+</p>
+
       <p>
         He served in Vietnam for one year, demonstrating courage and commitment
         throughout his deployment. Despite not being trained in jungle warfare,
