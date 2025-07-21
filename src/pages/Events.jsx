@@ -1,5 +1,6 @@
 import React from 'react';
 import './Events.css';
+import CookoutGallery from './CookoutGallery';
 
 // Upcoming events data
 const upcomingEvents = [
@@ -23,122 +24,87 @@ const pastEvents = [
     id: 1,
     title: 'Fundraiser',
     imageUrl: '/images/events/fundraiser20.jpeg',
-    
   },
-
   {
     id: 1,
     title: 'Installations',
     imageUrl: '/images/events/installation.jpg',
-    
   },
-
   {
     id: 1,
     title: 'Fundraiser',
     imageUrl: '/images/events/FR8.jpg',
-    
   },
-
   {
     id: 1,
     title: 'Fundraiser',
     imageUrl: '/images/events/GW1.jpg',
-    
   },
-
   {
     id: 1,
     title: 'Fundraiser',
     imageUrl: '/images/events/BBQA.jpg',
-    
   },
-
   {
     id: 1,
     title: 'Fundraiser',
     imageUrl: '/images/events/BBQB.jpg',
-    
   },
-
-
-   {
+  {
     id: 1,
     title: 'Coca Cola Appreciation',
     imageUrl: '/images/events/flower10.jpg',
-    
   },
-
   {
     id: 1,
     title: 'Female Appreciation Ceremony',
     imageUrl: '/images/events/flowers.jpg',
-    
   },
-
   {
     id: 1,
     title: 'Female Appreciation Ceremony',
     imageUrl: '/images/events/flower2.jpg',
-    
   },
-
   {
     id: 1,
     title: 'Female Appreciation Ceremony',
     imageUrl: '/images/events/flower3.jpg',
-    
   },
-
   {
     id: 1,
     title: 'Female Appreciation Ceremony',
     imageUrl: '/images/events/flower4.jpg',
-    
   },
-
   {
     id: 1,
     title: 'Female Appreciation Ceremony',
     imageUrl: '/images/events/flower5.jpg',
-    
   },
-
   {
     id: 1,
     title: 'Soldier Exodus',
     imageUrl: '/images/events/airport5.jpg',
-    
   },
-
   {
     id: 1,
     title: 'Knights Meat Market Appreciation',
     imageUrl: '/images/events/Knightscert1.jpg',
-    
   },
-
   {
     id: 1,
     title: 'Knights Meat Market Appreciation',
     imageUrl: '/images/events/cert1.jpg',
-    
   },
-
   {
     id: 1,
     title: 'FPL Foods',
     imageUrl: '/images/events/cert2.jpg',
-    
   },
-
   {
     id: 1,
     title: 'Volunteer Recognition',
     imageUrl: '/images/events/pamCert.jpg',
-    
   },
-
   // add more past events here as needed
 ];
 
@@ -150,9 +116,9 @@ export default function Events() {
       <section>
         <h2>Upcoming Events</h2>
         <div className="events-grid">
-          {upcomingEvents.map(({ id, title, imageUrl, link }) => (
+          {upcomingEvents.map(({ title, imageUrl, link }, index) => (
             <a
-              key={id}
+              key={index} // use index as key here
               href={link}
               target="_blank"
               rel="noopener noreferrer"
@@ -167,14 +133,17 @@ export default function Events() {
       </section>
 
       <section>
+        <h2>Cookout Photo Gallery</h2>
+        <CookoutGallery />
+      </section>
+
+      <section>
         <h2>Past Events</h2>
         <div className="events-grid past-events">
-          {pastEvents.map(({ id, title, imageUrl, link }) => (
+          {pastEvents.map(({ title, imageUrl }, index) => (
             <a
-              key={id}
-              href={link}
-              target="_blank"
-              rel="noopener noreferrer"
+              key={index} // use index as key here
+              href="#"
               className="event-card"
               title={title}
             >
