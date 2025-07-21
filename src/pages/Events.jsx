@@ -7,13 +7,13 @@ const upcomingEvents = [
   {
     id: 4,
     title: '2025 National Convention',
-    imageUrl: '/assets/NatConv.jpeg',
+    imageUrl: './NatConv.jpeg', // Make sure this path matches where you moved the images
     link: 'https://www.dav.org/events/2025-national-convention/',
   },
   {
     id: 5,
     title: 'Camp Corral',
-    imageUrl: '/assets/camp.jpeg',
+    imageUrl: './camp.jpeg',
     link: 'https://www.campcorral.org/camps/',
   },
 ];
@@ -26,86 +26,80 @@ const pastEvents = [
     imageUrl: '/images/events/fundraiser20.jpeg',
   },
   {
-    id: 1,
+    id: 2,
     title: 'Installations',
     imageUrl: '/images/events/installation.jpg',
   },
   {
-    id: 1,
+    id: 3,
     title: 'Fundraiser',
     imageUrl: '/images/events/FR8.jpg',
   },
   {
-    id: 1,
-    title: 'Fundraiser',
-    imageUrl: '/images/events/GW1.jpg',
-  },
-  {
-    id: 1,
+    id: 4,
     title: 'Fundraiser',
     imageUrl: '/images/events/BBQA.jpg',
   },
   {
-    id: 1,
+    id: 5,
     title: 'Fundraiser',
     imageUrl: '/images/events/BBQB.jpg',
   },
   {
-    id: 1,
+    id: 6,
     title: 'Coca Cola Appreciation',
     imageUrl: '/images/events/flower10.jpg',
   },
   {
-    id: 1,
+    id: 7,
     title: 'Female Appreciation Ceremony',
     imageUrl: '/images/events/flowers.jpg',
   },
   {
-    id: 1,
+    id: 8,
     title: 'Female Appreciation Ceremony',
     imageUrl: '/images/events/flower2.jpg',
   },
   {
-    id: 1,
+    id: 9,
     title: 'Female Appreciation Ceremony',
     imageUrl: '/images/events/flower3.jpg',
   },
   {
-    id: 1,
+    id: 10,
     title: 'Female Appreciation Ceremony',
     imageUrl: '/images/events/flower4.jpg',
   },
   {
-    id: 1,
+    id: 11,
     title: 'Female Appreciation Ceremony',
     imageUrl: '/images/events/flower5.jpg',
   },
   {
-    id: 1,
+    id: 12,
     title: 'Soldier Exodus',
     imageUrl: '/images/events/airport5.jpg',
   },
   {
-    id: 1,
+    id: 13,
     title: 'Knights Meat Market Appreciation',
     imageUrl: '/images/events/Knightscert1.jpg',
   },
   {
-    id: 1,
+    id: 14,
     title: 'Knights Meat Market Appreciation',
     imageUrl: '/images/events/cert1.jpg',
   },
   {
-    id: 1,
+    id: 15,
     title: 'FPL Foods',
     imageUrl: '/images/events/cert2.jpg',
   },
   {
-    id: 1,
+    id: 16,
     title: 'Volunteer Recognition',
     imageUrl: '/images/events/pamCert.jpg',
   },
-  // add more past events here as needed
 ];
 
 export default function Events() {
@@ -113,43 +107,41 @@ export default function Events() {
     <div className="events-container">
       <h1>DAV Chapter 18 - Augusta, GA</h1>
 
+      {/* Upcoming Events */}
       <section>
-        <h2>Upcoming Events</h2>
-        <div className="events-grid">
-          {upcomingEvents.map(({ title, imageUrl, link }, index) => (
-            <a
-              key={index} // use index as key here
-              href={link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="event-card"
-              title={title}
-            >
-              <img src={imageUrl} alt={title} className="event-image" />
-              <p className="event-title">{title}</p>
-            </a>
-          ))}
-        </div>
-      </section>
+  <h2>Upcoming Events</h2>
+  <div className="events-grid">
+    {upcomingEvents.map(({ title, imageUrl, link }, index) => (
+      <a
+        key={index}
+        href={link}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="event-card"
+      >
+        <img src={imageUrl} alt={title} className="event-image" />
+        <p className="event-title">{title}</p>
+      </a>
+    ))}
+  </div>
+</section>
 
+
+      {/* Cookout Photo Gallery */}
       <section>
-        <h2>Cookout Photo Gallery</h2>
+        
         <CookoutGallery />
       </section>
 
+      {/* Past Events */}
       <section>
         <h2>Past Events</h2>
         <div className="events-grid past-events">
-          {pastEvents.map(({ title, imageUrl }, index) => (
-            <a
-              key={index} // use index as key here
-              href="#"
-              className="event-card"
-              title={title}
-            >
+          {pastEvents.map(({ id, title, imageUrl }) => (
+            <div key={id} className="event-card" title={title}>
               <img src={imageUrl} alt={title} className="event-image" />
               <p className="event-title">{title}</p>
-            </a>
+            </div>
           ))}
         </div>
       </section>
