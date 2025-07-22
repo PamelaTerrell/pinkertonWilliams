@@ -64,3 +64,24 @@
   font-weight: bold;
   text-align: center;
 }
+
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #004085; /* DAV dark blue */
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease;
+}
+
+.back-to-top:hover {
+  background-color: #002752;
+}
+

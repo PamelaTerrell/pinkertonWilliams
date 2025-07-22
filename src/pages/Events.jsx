@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './Events.css';
 import CookoutGallery from './CookoutGallery';
 
@@ -7,7 +7,7 @@ const upcomingEvents = [
   {
     id: 4,
     title: '2025 National Convention',
-    imageUrl: './NatConv.png', // Make sure this path matches where you moved the images
+    imageUrl: './NatConv.png',
     link: 'https://www.dav.org/events/2025-national-convention/',
   },
   {
@@ -103,33 +103,45 @@ const pastEvents = [
 ];
 
 export default function Events() {
+  const [showButton, setShowButton] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowButton(window.scrollY > 300);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <div className="events-container">
       <h1>DAV Chapter 18 - Augusta, GA</h1>
 
       {/* Upcoming Events */}
       <section>
-  <h2>Upcoming Events</h2>
-  <div className="events-grid">
-    {upcomingEvents.map(({ title, imageUrl, link }, index) => (
-      <a
-        key={index}
-        href={link}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="event-card"
-      >
-        <img src={imageUrl} alt={title} className="event-image" />
-        <p className="event-title">{title}</p>
-      </a>
-    ))}
-  </div>
-</section>
-
+        <h2>Upcoming Events</h2>
+        <div className="events-grid">
+          {upcomingEvents.map(({ title, imageUrl, link }, index) => (
+            <a
+              key={index}
+              href={link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="event-card"
+            >
+              <img src={imageUrl} alt={title} className="event-image" />
+              <p className="event-title">{title}</p>
+            </a>
+          ))}
+        </div>
+      </section>
 
       {/* Cookout Photo Gallery */}
       <section>
-        
         <CookoutGallery />
       </section>
 
@@ -145,6 +157,13 @@ export default function Events() {
           ))}
         </div>
       </section>
+
+      {/* Back to Top Button */}
+      {showButton && (
+        <button className="back-to-top" onClick={scrollToTop}>
+          ↑ Back to Top
+        </button>
+      )}
     </div>
   );
 }
