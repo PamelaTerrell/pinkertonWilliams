@@ -7,7 +7,7 @@ const upcomingEvents = [
   {
     id: 4,
     title: '2025 National Convention',
-    imageUrl: './NatConv.jpeg', // Make sure this path matches where you moved the images
+    imageUrl: './NatConv.png', // Make sure this path matches where you moved the images
     link: 'https://www.dav.org/events/2025-national-convention/',
   },
   {
