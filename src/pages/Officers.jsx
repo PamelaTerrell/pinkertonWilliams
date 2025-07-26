@@ -28,7 +28,30 @@ export default function Officers() {
             <h3>{name}</h3>
             <p>{title}</p>
           </div>
+
+          
+
         ))}
+
+
+<section className="getvabuddy-section">
+  <h3>Helpful VA Resource</h3>
+  <a
+    href="https://getvabuddy.com"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="getvabuddy-link"
+    aria-label="Visit Get VA Buddy website"
+  >
+    <img
+      src="/buddy.png"
+      alt="Get VA Buddy Logo"
+      className="buddy-logo"
+    />
+    <span>Visit Get VA Buddy for easy help navigating VA forms and benefits online.</span>
+  </a>
+</section>
+
       </div>
     </div>
   );
