@@ -5,9 +5,8 @@ import './Footer.css';
 function Footer() {
   return (
     <footer className="footer">
-      <img src={davLogo} alt="DAV Logo" className="footer-logo" /> 
-      <p>© 2016 DAV Chapter 18. All rights reserved.
-        </p>
+      <img src={davLogo} alt="DAV Logo" className="footer-logo" />
+      <p>© 2016 DAV Chapter 18. All rights reserved.</p>
     </footer>
   );
 }

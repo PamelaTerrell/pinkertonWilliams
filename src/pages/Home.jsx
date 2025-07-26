@@ -3,7 +3,6 @@ import React from "react";
 import './Home.css';
 import davLogo from '../assets/Doclogo.jpg';
 
-
 export default function Home() {
   return (
     <div className="home-container">
@@ -22,7 +21,6 @@ export default function Home() {
         <p>📅 Every 4th Saturday of the month</p>
         <p>📍 Location: PAINE College Chapel, 15th St. Augusta, GA</p>
         <p>🕒 Time: 10:00 AM</p>
-        
       </section>
 
       <section className="location">
@@ -33,10 +31,28 @@ export default function Home() {
         <p>🕒 Hours: Monday - Thursday, 8:00 AM to 12:00 PM</p>
       </section>
 
+      <section className="getvabuddy-section">
+  <h3>Helpful VA Resource</h3>
+  <a
+    href="https://getvabuddy.com"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="getvabuddy-link"
+    aria-label="Visit Get VA Buddy website"
+  >
+    <img
+      src="/buddy.png"
+      alt="Get VA Buddy Logo"
+      className="buddy-logo"
+    />
+    <span>Visit Get VA Buddy for easy help navigating VA forms and benefits online.</span>
+  </a>
+</section>
+
+
       <div className="golden-image-container">
         <img src="/assets/Golden.jpeg" alt="Golden" className="golden-image" />
       </div>
-
     </div>
   );
 }

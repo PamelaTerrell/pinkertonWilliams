@@ -44,6 +44,42 @@ body {
     height: auto;
     margin-bottom: 1rem;
   }
+
+  .getvabuddy-section {
+    color: navy;
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: #f2f9ff;
+    border: 1px solid #cce4ff;
+    border-radius: 6px;
+    text-align: center;
+  }
+  
+  .getvabuddy-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: #0057b8;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 1.1rem;
+  }
+  
+  .getvabuddy-link:hover,
+  .getvabuddy-link:focus {
+    text-decoration: underline;
+  }
+  
+  .buddy-logo {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 87, 184, 0.5);
+  }
+  
+  
+  
   
   @media (max-width: 600px) {
     .logo {
