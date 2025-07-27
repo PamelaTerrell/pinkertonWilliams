@@ -14,6 +14,16 @@ function App() {
   return (
     <BrowserRouter>
       <NavBar />
+
+      <div style={{ textAlign: 'center', margin: '20px 0' }}>
+      <img 
+  src="/go-image.png" 
+  alt="DAV Chapter 18" 
+  style={{ width: '300px', height: 'auto', display: 'block', margin: '0 auto' }} 
+/>
+
+      </div>
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/officers" element={<Officers />} />
