@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { Analytics } from "@vercel/analytics/react";
 
 import Home from './pages/Home.jsx';
@@ -16,12 +16,11 @@ function App() {
       <NavBar />
 
       <div style={{ textAlign: 'center', margin: '20px 0' }}>
-      <img 
-  src="/go-image.png" 
-  alt="DAV Chapter 18" 
-  style={{ width: '300px', height: 'auto', display: 'block', margin: '0 auto' }} 
-/>
-
+        <img 
+          src="/go-image.png" 
+          alt="DAV Chapter 18" 
+          style={{ width: '300px', height: 'auto', display: 'block', margin: '0 auto' }} 
+        />
       </div>
 
       <Routes>
@@ -30,7 +29,10 @@ function App() {
         <Route path="/events" element={<Events />} />
         <Route path="/purple-heart-honoree" element={<PurpleHeartHonoree />} />
 
+        {/* Redirect any unknown routes to Home */}
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
+
       <Footer /> 
       <Analytics />
     </BrowserRouter>
