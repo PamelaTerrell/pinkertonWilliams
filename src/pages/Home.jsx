@@ -11,10 +11,22 @@ export default function Home() {
       </header>
 
      <section className="hero">
-  <h2>Honoring Service. Empowering Veterans.</h2>
-  <p>We are committed to supporting those who served.</p>
-  <a href="/membership" className="cta-button">Join DAV Chapter 18</a>
+  <div className="hero-text">
+    <h2>Honoring Service. Empowering Veterans.</h2>
+    <p>We are committed to supporting those who served.</p>
+    <a href="/membership" className="cta-button">Join DAV Chapter 18</a>
+  </div>
+
+  <div className="hero-extra">
+    <h3>Our Mission</h3>
+    <p>
+      Chapter 18 Pinkerton-Williams provides veterans and their families with
+      trusted support, resources, and fellowship. We’re here to ensure every
+      veteran receives the benefits they earned.
+    </p>
+  </div>
 </section>
+
 
 
       {/* Meetings + Location */}

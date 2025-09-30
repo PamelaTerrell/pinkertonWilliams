@@ -28,14 +28,50 @@ body {
   .logo { width: 300px; }
 }
 
-/* Hero */
+/* Hero base (keeps mobile stack) */
 .hero {
   background: linear-gradient(145deg, #1f2937, #111827);
-  padding: 2rem;
+  padding: 2.5rem 2rem;
   border-radius: 12px;
   text-align: center;
   box-shadow: 0 4px 30px rgba(0,0,0,0.5);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
+
+/* Split layout on large screens */
+@media (min-width: 900px) {
+  .hero {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    gap: 3rem;
+  }
+
+  .hero-text, .hero-extra {
+    flex: 1;
+  }
+
+  .hero-extra {
+    
+    padding: 1.5rem;
+    border-radius: 10px;
+  }
+
+  .hero-extra h3 {
+    margin-top: 0;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .hero-extra p {
+    font-size: 1.05rem;
+    line-height: 1.6;
+  }
+}
+
 
 .cta-button {
   display: inline-block;
