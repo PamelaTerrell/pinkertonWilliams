@@ -2,21 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './Events.css';
 import CookoutGallery from './CookoutGallery';
 
-// Upcoming events data
-const upcomingEvents = [
-  {
-    id: 4,
-    title: '2025 National Convention',
-    imageUrl: './NatConv.png',
-    link: 'https://www.dav.org/events/2025-national-convention/',
-  },
-  {
-    id: 5,
-    title: 'Camp Corral',
-    imageUrl: './camp.jpeg',
-    link: 'https://www.campcorral.org/camps/',
-  },
-];
+
 
 // Past events data
 const pastEvents = [
@@ -121,24 +107,7 @@ export default function Events() {
     <div className="events-container">
       <h1>DAV Chapter 18 - Augusta, GA</h1>
 
-      {/* Upcoming Events */}
-      <section>
-        <h2>Upcoming Events</h2>
-        <div className="events-grid">
-          {upcomingEvents.map(({ title, imageUrl, link }, index) => (
-            <a
-              key={index}
-              href={link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="event-card"
-            >
-              <img src={imageUrl} alt={title} className="event-image" />
-              <p className="event-title">{title}</p>
-            </a>
-          ))}
-        </div>
-      </section>
+     
 
       {/* Cookout Photo Gallery */}
       <section>
