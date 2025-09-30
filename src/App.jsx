@@ -1,23 +1,27 @@
-import React from 'react';
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import { Analytics } from "@vercel/analytics/react";
+import React from 'react'
+import { Routes, Route, Navigate } from 'react-router-dom'
+import { Analytics } from "@vercel/analytics/react"
 
-import Home from './pages/Home.jsx';
-import Officers from './pages/Officers.jsx';
-import Events from './pages/Events.jsx';
-import PurpleHeartHonoree from './pages/PurpleHeart.jsx';
+import Home from './pages/Home.jsx'
+import Officers from './pages/Officers.jsx'
+import Events from './pages/Events.jsx'
+import PurpleHeartHonoree from './pages/PurpleHeart.jsx'
 
-import NavBar from './components/NavBar.jsx';
-import Footer from './components/Footer.jsx';
+import NavBar from './components/NavBar.jsx'
+import Footer from './components/Footer.jsx'
+
+import usePageView from './hooks/usePageView.js'
 
 function App() {
+  usePageView(); // ✅ safe now
+
   return (
-    <BrowserRouter>
+    <>
       <NavBar />
 
       <div style={{ textAlign: 'center', margin: '20px 0' }}>
         <img 
-          src="/go-image.png" 
+          src="/og-image.png"  // ✅ matches /public/images
           alt="DAV Chapter 18" 
           style={{ width: '300px', height: 'auto', display: 'block', margin: '0 auto' }} 
         />
@@ -28,15 +32,13 @@ function App() {
         <Route path="/officers" element={<Officers />} />
         <Route path="/events" element={<Events />} />
         <Route path="/purple-heart-honoree" element={<PurpleHeartHonoree />} />
-
-        {/* Redirect any unknown routes to Home */}
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
 
       <Footer /> 
       <Analytics />
-    </BrowserRouter>
-  );
+    </>
+  )
 }
 
-export default App;
+export default App

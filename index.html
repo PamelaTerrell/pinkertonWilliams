@@ -2,27 +2,68 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+
     <title>DAV Chapter 18 Augusta, GA | PINKERTONWILLIAMS.ORG</title>
 
-
+    <!-- Primary SEO -->
     <meta name="description" content="DAV Chapter 18 in Augusta, GA — Certified DAV Service Officers helping veterans file VA claims and receive the benefits they deserve." />
-  <link rel="canonical" href="https://pinkertonwilliams.org" />
+    <link rel="canonical" href="https://pinkertonwilliams.org" />
+    <meta name="robots" content="index,follow" />
+    <meta name="theme-color" content="#0f172a" />
 
-  <!-- Open Graph (for LinkedIn, Facebook, iMessage, etc.) -->
-<meta property="og:title" content="DAV Chapter 18 Augusta, GA" />
-<meta property="og:description" content="Trusted help from Certified DAV Service Officers — serving veterans and their families with VA claims and benefits." />
-<meta property="og:image" content="https://pinkertonwilliams.org/go-image.png" />
-<meta property="og:url" content="https://pinkertonwilliams.org" />
-<meta property="og:type" content="website" />
+    <!-- Open Graph -->
+    <meta property="og:title" content="DAV Chapter 18 Augusta, GA" />
+    <meta property="og:description" content="Trusted help from Certified DAV Service Officers — serving veterans and their families with VA claims and benefits." />
+    <meta property="og:image" content="https://pinkertonwilliams.org/og-image.png" />
+    <meta property="og:url" content="https://pinkertonwilliams.org" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="PinkertonWilliams.org" />
+    <!-- (optional but nice) -->
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
 
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="DAV Chapter 18 Augusta, GA" />
+    <meta name="twitter:description" content="Trusted help from Certified DAV Service Officers — serving veterans and their families with VA claims and benefits." />
+    <meta name="twitter:image" content="https://pinkertonwilliams.org/og-image.png" />
 
-
-
-    <link rel="icon" href="/favicon.ico" />
+    <!-- Icons / PWA -->
+    <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="icon" type="image/png" href="/circle.png" sizes="32x32" />
-    
+    <!-- TODO: add /icon-192.png (192x192) then uncomment the next line -->
+    <!-- <link rel="icon" type="image/png" href="/icon-192.png" sizes="192x192" /> -->
+    <!-- TODO: add /apple-touch-icon.png (180x180) or temporarily point to a 180x180 PNG you already have -->
+    <!-- <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" /> -->
+    <link rel="manifest" href="/manifest.webmanifest" />
+
+    <!-- Preconnect for GA performance -->
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
+    <link rel="preconnect" href="https://www.google-analytics.com" crossorigin />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XTJN939S1Z"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){ dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-XTJN939S1Z', { anonymize_ip: true, transport_type: 'beacon' });
+    </script>
+
+    <!-- Minimal JSON-LD -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "DAV Chapter 18 (Pinkerton Williams)",
+        "url": "https://pinkertonwilliams.org",
+        "logo": "https://pinkertonwilliams.org/og-image.png",
+        "sameAs": []
+      }
+    </script>
   </head>
+
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
