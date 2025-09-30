@@ -44,6 +44,11 @@ export default function NavBar() {
       Purple Heart Honoree
     </Link>
   </li>
+  <li>
+    <Link to="/membership" className="nav-link" onClick={() => setMenuOpen(false)}>
+      Membership
+    </Link>
+  </li>
 </ul>
 
       </div>

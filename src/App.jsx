@@ -6,6 +6,7 @@ import Home from './pages/Home.jsx'
 import Officers from './pages/Officers.jsx'
 import Events from './pages/Events.jsx'
 import PurpleHeartHonoree from './pages/PurpleHeart.jsx'
+import Membership from './pages/Membership.jsx';
 
 import NavBar from './components/NavBar.jsx'
 import Footer from './components/Footer.jsx'
@@ -32,6 +33,7 @@ function App() {
         <Route path="/officers" element={<Officers />} />
         <Route path="/events" element={<Events />} />
         <Route path="/purple-heart-honoree" element={<PurpleHeartHonoree />} />
+        <Route path="/membership" element={<Membership />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
 
