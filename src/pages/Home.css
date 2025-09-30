@@ -1,129 +1,148 @@
 body {
-    margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #0d1117;
-    color: #e6edf3;
-  }
-  
-  .home-container {
-    display: flex;
-    flex-direction: column;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #0d1117;
+  color: #e6edf3;
+}
+
+/* Container */
+.home-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem 1.25rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header */
+.header {
+  text-align: center;
+}
+.logo {
+  width: 460px;
+  height: auto;
+  margin-bottom: 1rem;
+}
+@media (max-width: 600px) {
+  .logo { width: 300px; }
+}
+
+/* Hero */
+.hero {
+  background: linear-gradient(145deg, #1f2937, #111827);
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 30px rgba(0,0,0,0.5);
+}
+
+.cta-button {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #2563eb;
+  border-radius: 8px;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+.cta-button:hover {
+  background-color: #1d4ed8;
+}
+
+
+/* Golden image */
+.golden-image-container {
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+}
+.golden-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.4);
+}
+
+/* Meetings + Location */
+.meetings, .location {
+  background: #161b22;
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+}
+.location {
+  background-color: #111827;
+}
+
+/* VA Buddy */
+.getvabuddy-section {
+  background: #f2f9ff;
+  border: 1px solid #cce4ff;
+  border-radius: 8px;
+  color: #0057b8;
+  text-align: center;
+  padding: 1.5rem;
+}
+.getvabuddy-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #0057b8;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+.getvabuddy-link:hover,
+.getvabuddy-link:focus { text-decoration: underline; }
+.buddy-logo {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0, 87, 184, 0.5);
+}
+
+/* -----------------------------
+   Responsive Layout Enhancements
+------------------------------*/
+
+/* Wrap hero + golden */
+.hero-group {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+@media (min-width: 900px) {
+  .hero-group {
+    flex-direction: row;
     align-items: center;
-    padding: 2rem;
+    justify-content: center;
   }
-  
-  .header {
-    text-align: center;
+  .hero-group .hero,
+  .hero-group .golden-image-container {
+    flex: 1;
   }
+  .hero { text-align: left; }
+}
 
-  .location {
-    margin-top: 2rem;
-    background-color: #111827; /* example: a subtle dark background */
-    padding: 1rem 2rem;
-    border-radius: 8px;
-    color: #e6edf3;
-    text-align: center;
+/* Meetings + Location wrapper */
+.info-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+}
+@media (min-width: 900px) {
+  .info-sections {
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    gap: 2rem;
   }
-
-  .golden-image-container {
-    padding: 1rem; /* or whatever amount you prefer */
-    display: flex;
-    justify-content: center; /* centers the image horizontally */
+  .info-sections > section {
+    flex: 1;
   }
-  
-  .golden-image {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px; /* optional, for rounded corners */
-  }
-  
-  
-  
-  .logo {
-    width: 460px;
-    height: auto;
-    margin-bottom: 1rem;
-  }
-
-  .getvabuddy-section {
-    color: navy;
-    margin-top: 2rem;
-    padding: 1rem;
-    background-color: #f2f9ff;
-    border: 1px solid #cce4ff;
-    border-radius: 6px;
-    text-align: center;
-  }
-  
-  .getvabuddy-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.75rem;
-    color: #0057b8;
-    font-weight: 600;
-    text-decoration: none;
-    font-size: 1.1rem;
-  }
-  
-  .getvabuddy-link:hover,
-  .getvabuddy-link:focus {
-    text-decoration: underline;
-  }
-  
-  .buddy-logo {
-    width: 48px;
-    height: 48px;
-    object-fit: contain;
-    border-radius: 8px;
-    box-shadow: 0 0 5px rgba(0, 87, 184, 0.5);
-  }
-  
-  
-  
-  
-  @media (max-width: 600px) {
-    .logo {
-      width: 300px;
-    }
-  }
-  
-  
-  .hero {
-    background: linear-gradient(145deg, #1f2937, #111827);
-    padding: 2rem;
-    border-radius: 12px;
-    margin: 2rem 0;
-    text-align: center;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
-  }
-  
-  .meetings {
-    background: #161b22;
-    padding: 2rem;
-    border-radius: 12px;
-    max-width: 500px;
-    text-align: center;
-  }
-  
-  .cta-button {
-    margin-top: 1rem;
-    padding: 0.75rem 1.5rem;
-    background-color: #2563eb;
-    border: none;
-    border-radius: 8px;
-    color: white;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background-color 0.3s ease;
-  }
-  
-  .cta-button:hover {
-    background-color: #1d4ed8;
-  }
-  
-  .footer {
-    margin-top: 3rem;
-    font-size: 0.875rem;
-    opacity: 0.7;
-  }
-  
+}
