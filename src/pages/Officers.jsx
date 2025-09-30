@@ -1,8 +1,6 @@
 import React from "react";
 import './Officers.css';
 
-
-
 const officers = [
   { id: 1, name: "Alvin Terrell", title: "Commander", photo: "/assets/officers/AT.JPG" },
   { id: 2, name: "Tracey Robinson", title: "Senior Vice Commander", photo: "/assets/officers/traceyrobinson.png" },
@@ -19,40 +17,41 @@ const officers = [
 export default function Officers() {
   return (
     <div className="officers-container">
-        <h1>DAV Chapter 18 - Augusta, GA</h1>
-      <h2>Our Officers</h2>
+      <header className="officers-header">
+        <h1>DAV Chapter 18 – Augusta, GA</h1>
+        <h2>Our Officers</h2>
+      </header>
+
+      {/* Officers grid */}
       <div className="officers-grid">
         {officers.map(({ id, name, title, photo }) => (
           <div key={id} className="officer-card">
-            <img src={photo} alt={name} className="officer-photo" />
+            <img src={photo} alt={name} className="officer-photo" loading="lazy" />
             <h3>{name}</h3>
             <p>{title}</p>
           </div>
-
-          
-
         ))}
-
-
-<section className="getvabuddy-section">
-  <h3>Helpful VA Resource</h3>
-  <a
-    href="https://getvabuddy.com"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="getvabuddy-link"
-    aria-label="Visit Get VA Buddy website"
-  >
-    <img
-      src="/buddy.png"
-      alt="Get VA Buddy Logo"
-      className="buddy-logo"
-    />
-    <span>Visit Get VA Buddy for easy help navigating VA forms and benefits online.</span>
-  </a>
-</section>
-
       </div>
+
+      {/* Get VA Buddy section at bottom, consistent with Home */}
+      <section className="getvabuddy-section">
+        <h3>Helpful VA Resource</h3>
+        <a
+          href="https://getvabuddy.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="getvabuddy-link"
+          aria-label="Visit Get VA Buddy website"
+        >
+          <img
+            src="/buddy.png"
+            alt="Get VA Buddy Logo"
+            className="buddy-logo"
+            loading="lazy"
+          />
+          <span>Visit Get VA Buddy for easy help navigating VA forms and benefits online.</span>
+        </a>
+      </section>
     </div>
   );
 }
