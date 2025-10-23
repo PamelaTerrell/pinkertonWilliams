@@ -44,7 +44,7 @@ export default function Officers() {
           aria-label="Visit Get VA Buddy website"
         >
           <img
-            src="/buddy.png"
+            src="/getvabuddy.png"
             alt="Get VA Buddy Logo"
             className="buddy-logo"
             loading="lazy"

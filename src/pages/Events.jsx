@@ -144,7 +144,7 @@ export default function Events() {
     aria-label="Visit Get VA Buddy website"
   >
     <img
-      src="/buddy.png"
+      src="/getvabuddy.png"
       alt="Get VA Buddy Logo"
       className="buddy-logo"
     />
