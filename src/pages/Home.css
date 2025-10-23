@@ -257,25 +257,56 @@ body {
 /* ===========================
    Golden image (720 x 720)
 =========================== */
+/* ===== Golden image (fully responsive) ===== */
 .golden-image-container {
   display: flex;
   justify-content: center;
-  padding: .5rem;
+  padding: 1rem 1.25rem;
 }
+
 .golden-image {
-  
-  height: auto;
+  display: block;
+  width: 100%;
+  height: auto;             /* maintain natural proportions */
+  max-width: 100%;          /* never overflow its container */
   border-radius: 20px;
+  margin: 0 auto;
   background:
     radial-gradient(70% 80% at 50% 30%, rgba(229,182,64,.12), transparent 60%),
     linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0));
   box-shadow:
-    0 20px 60px rgba(0,0,0,.45),
+    0 16px 48px rgba(0,0,0,.45),
     0 0 0 1px rgba(229,182,64,.25),
-    0 0 80px rgba(229,182,64,.18);
-  outline: 0;                   /* allow :focus-visible ring */
+    0 0 60px rgba(229,182,64,.18);
 }
-.golden-image:focus-visible { box-shadow: var(--ring), 0 20px 60px rgba(0,0,0,.45); }
+
+/* Tablets and small laptops */
+@media (max-width: 900px) {
+  .golden-image-container {
+    padding: 0.75rem;
+  }
+  .golden-image {
+    border-radius: 16px;
+    box-shadow:
+      0 12px 36px rgba(0,0,0,.4),
+      0 0 0 1px rgba(229,182,64,.25),
+      0 0 50px rgba(229,182,64,.15);
+  }
+}
+
+/* Phones */
+@media (max-width: 600px) {
+  .golden-image {
+    width: 94vw;           /* slightly smaller than viewport for side breathing room */
+    border-radius: 12px;
+    box-shadow:
+      0 8px 28px rgba(0,0,0,.4),
+      0 0 0 1px rgba(229,182,64,.25),
+      0 0 40px rgba(229,182,64,.12);
+  }
+}
+
+  
 
 /* ===========================
    Utility
