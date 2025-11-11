@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react';
 import './Events.css';
 import CookoutGallery from './CookoutGallery';
 
-
-
 // Past events data
 const pastEvents = [
   {
@@ -105,9 +103,25 @@ export default function Events() {
 
   return (
     <div className="events-container">
+      {/* Hero */}
       <h1>DAV Chapter 18 - Augusta, GA</h1>
 
-     
+      {/* Featured Recent Event (under hero) */}
+      <section aria-label="Recent Event" className="featured-event">
+        <h2>Recent Event</h2>
+        <figure className="featured-card">
+          <img
+            src="/images/events/davbenbrief.JPG"
+            alt="DAV Benefits Briefing"
+            loading="eager"
+            className="featured-image"
+            sizes="(min-width: 1200px) 800px, (min-width: 768px) 70vw, 92vw"
+          />
+          <figcaption className="featured-caption">
+            DAV Benefits Briefing
+          </figcaption>
+        </figure>
+      </section>
 
       {/* Cookout Photo Gallery */}
       <section>
@@ -120,7 +134,12 @@ export default function Events() {
         <div className="events-grid past-events">
           {pastEvents.map(({ id, title, imageUrl }) => (
             <div key={id} className="event-card" title={title}>
-              <img src={imageUrl} alt={title} className="event-image" />
+              <img
+                src={imageUrl}
+                alt={title}
+                className="event-image"
+                loading="lazy"
+              />
               <p className="event-title">{title}</p>
             </div>
           ))}
@@ -129,33 +148,36 @@ export default function Events() {
 
       {/* Back to Top Button */}
       {showButton && (
-        <button className="back-to-top" onClick={scrollToTop}>
+        <button
+          className="back-to-top"
+          onClick={scrollToTop}
+          aria-label="Back to Top"
+        >
           ↑ Back to Top
         </button>
       )}
 
-<section className="getvabuddy-section">
-  <h3>Helpful VA Resource</h3>
-  <a
-    href="https://getvabuddy.com"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="getvabuddy-link"
-    aria-label="Visit Get VA Buddy website"
-  >
-    <img
-      src="/getvabuddy.png"
-      alt="Get VA Buddy Logo"
-      className="buddy-logo"
-    />
-    <span>Visit Get VA Buddy for easy help navigating VA forms and benefits online.</span>
-  </a>
-</section>
-
-
+      {/* Helpful Link */}
+      <section className="getvabuddy-section">
+        <h3>Helpful VA Resource</h3>
+        <a
+          href="https://getvabuddy.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="getvabuddy-link"
+          aria-label="Visit Get VA Buddy website"
+        >
+          <img
+            src="/getvabuddy.png"
+            alt="Get VA Buddy Logo"
+            className="buddy-logo"
+          />
+          <span>
+            Visit Get VA Buddy for easy help navigating VA forms and benefits
+            online.
+          </span>
+        </a>
+      </section>
     </div>
-
-      
-
   );
 }

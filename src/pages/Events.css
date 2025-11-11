@@ -1,4 +1,4 @@
-/* Base container */
+/* ---------- Base Container ---------- */
 .events-container {
   padding: 2rem;
   font-family: Arial, sans-serif;
@@ -6,7 +6,7 @@
   color: #2c3e50;
 }
 
-/* Headings */
+/* ---------- Headings ---------- */
 .events-container h1 {
   text-align: center;
   font-size: 2rem;
@@ -20,7 +20,49 @@
   text-align: center;
 }
 
-/* Shared grid for all events */
+/* ---------- Featured Recent Event (under hero) ---------- */
+.featured-event {
+  margin: 1.25rem auto 2.5rem;
+  width: min(1000px, 92vw);
+}
+
+.featured-event > h2 {
+  text-align: center;
+  margin-bottom: 0.75rem;
+}
+
+.featured-card {
+  margin: 0;
+  padding: clamp(0.75rem, 1.5vw, 1rem);
+  background: #fff;
+  border: 2px solid gold;
+  border-radius: 14px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.06);
+}
+
+.featured-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 10px;
+  max-height: 75vh;
+  margin-inline: auto;
+}
+
+.featured-caption {
+  text-align: center;
+  font-weight: 600;
+  margin-top: 0.6rem;
+}
+
+@media (min-width: 1400px) {
+  .featured-event {
+    width: 1100px;
+  }
+}
+
+/* ---------- Shared Grid for All Events ---------- */
 .events-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -29,18 +71,19 @@
   padding: 0 1rem;
 }
 
-/* Shared card layout */
+/* ---------- Event Cards ---------- */
 .event-card {
-  background-color: #ffffff;
+  background-color: #f8f8f8;
   border: 1px solid #ddd;
-  border-radius: 10px;
+  border-radius: 12px;
+  text-align: center;
   overflow: hidden;
-  text-decoration: none;
   color: #333;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 1rem;
 }
 
 .event-card:hover {
@@ -48,23 +91,25 @@
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
 }
 
-/* Shared image formatting */
-.event-image {
+/* ---------- Uniform Past Event Image Layout ---------- */
+.past-events .event-image {
   width: 100%;
-  height: 250px;
-  object-fit: cover;
-  display: block;
-  border-bottom: 1px solid #eee;
+  height: 220px;           /* sets consistent display height */
+  object-fit: cover;       /* fills the area while keeping proportions */
+  object-position: center; /* center the focal point */
+  border-radius: 8px;
 }
 
-/* Event title */
+
+/* ---------- Event Titles ---------- */
 .event-title {
-  padding: 1rem;
+  padding: 1rem 0 0.25rem;
   font-size: 1rem;
   font-weight: bold;
   text-align: center;
 }
 
+/* ---------- Back to Top Button ---------- */
 .back-to-top {
   position: fixed;
   bottom: 30px;
@@ -85,3 +130,22 @@
   background-color: #002752;
 }
 
+/* ---------- Optional: Get VA Buddy Section ---------- */
+.getvabuddy-section {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.getvabuddy-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: #004085;
+  font-weight: 600;
+}
+
+.buddy-logo {
+  height: 40px;
+  width: auto;
+}
