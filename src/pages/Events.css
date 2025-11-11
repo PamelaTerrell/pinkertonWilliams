@@ -149,3 +149,43 @@
   height: 40px;
   width: auto;
 }
+
+/* ---------- Featured Recent Event (mobile centering fix) ---------- */
+.featured-event {
+  margin: 1.25rem auto 2.5rem;
+  width: 100%;
+  max-width: 1000px;      /* replaces min() for better iOS behavior */
+  padding: 0 1rem;        /* ensure small side padding for mobile */
+  box-sizing: border-box; /* prevents overflow from padding */
+}
+
+.featured-event > h2 {
+  text-align: center;
+  margin-bottom: 0.75rem;
+}
+
+.featured-card {
+  margin: 0 auto;
+  padding: clamp(0.75rem, 1.5vw, 1rem);
+  background: #fff;
+  border: 2px solid gold;
+  border-radius: 14px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.06);
+  max-width: 100%;         /* make sure it never exceeds screen width */
+}
+
+.featured-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 10px;
+  max-height: 75vh;
+  margin: 0 auto;
+}
+
+.featured-caption {
+  text-align: center;
+  font-weight: 600;
+  margin-top: 0.6rem;
+}
