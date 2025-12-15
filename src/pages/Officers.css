@@ -107,3 +107,14 @@
     height: 190px;
   }
 }
+
+.officer-link {
+  margin-top: 0.25rem;
+  font-size: 0.75rem;
+  color: var(--muted, #9aa4b2);
+  text-decoration: none;
+}
+
+.officer-link:hover {
+  text-decoration: underline;
+}

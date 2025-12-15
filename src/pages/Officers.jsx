@@ -1,5 +1,5 @@
 import React from "react";
-import './Officers.css';
+import "./Officers.css";
 
 const officers = [
   { id: 1, name: "Alvin Terrell", title: "Commander", photo: "/assets/officers/AT.JPG" },
@@ -11,7 +11,13 @@ const officers = [
   { id: 7, name: "Arthur Smith", title: "Chapter Historian", photo: "/assets/officers/ArthurSmith.jpeg" },
   { id: 8, name: "Douglas Holloway", title: "Sgt at Arms", photo: "/assets/officers/DouglasHolloway.jpg" },
   { id: 9, name: "Robert Bledsoe", title: "Staff Judge Advocate", photo: "/assets/officers/RB.JPG" },
-  { id: 10, name: "Pamela Terrell", title: "Web Developer", photo: "/assets/officers/PJT.png" },
+  {
+    id: 10,
+    name: "Pamela Terrell",
+    title: "Web Developer",
+    photo: "/assets/officers/PJT.png",
+    link: "https://pamelajterrell.com",
+  },
 ];
 
 export default function Officers() {
@@ -22,18 +28,28 @@ export default function Officers() {
         <h2>Our Officers</h2>
       </header>
 
-      {/* Officers grid */}
       <div className="officers-grid">
-        {officers.map(({ id, name, title, photo }) => (
+        {officers.map(({ id, name, title, photo, link }) => (
           <div key={id} className="officer-card">
             <img src={photo} alt={name} className="officer-photo" loading="lazy" />
             <h3>{name}</h3>
             <p>{title}</p>
+
+            {link && (
+              <a
+                href={link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="officer-link"
+                aria-label={`Visit ${name}'s website`}
+              >
+                visit personal website
+              </a>
+            )}
           </div>
         ))}
       </div>
 
-      {/* Get VA Buddy section at bottom, consistent with Home */}
       <section className="getvabuddy-section">
         <h3>Helpful VA Resource</h3>
         <a
