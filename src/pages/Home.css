@@ -31,7 +31,12 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 /* ===========================
@@ -46,9 +51,10 @@ html, body { height: 100%; }
 body {
   margin: 0;
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Noto Sans, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-  background: radial-gradient(1200px 800px at 10% -10%, rgba(229,182,64,.06), transparent 40%),
-              radial-gradient(1400px 900px at 110% 10%, rgba(37,99,235,.07), transparent 35%),
-              var(--bg);
+  background:
+    radial-gradient(1200px 800px at 10% -10%, rgba(229,182,64,.06), transparent 40%),
+    radial-gradient(1400px 900px at 110% 10%, rgba(37,99,235,.07), transparent 35%),
+    var(--bg);
   color: var(--text);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
@@ -73,18 +79,28 @@ body {
 .header {
   text-align: center;
 }
+
+.header--center-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
 .header h1 {
   margin: .25rem 0 0;
   font-size: var(--step-3);
   letter-spacing: .3px;
   font-weight: 700;
 }
+
 .logo {
   width: min(460px, 60vw);
   height: auto;
   margin-bottom: .75rem;
   filter: drop-shadow(0 10px 30px rgba(0,0,0,.45));
 }
+
 @media (max-width: 600px) {
   .logo { width: 300px; }
 }
@@ -100,6 +116,7 @@ body {
   box-shadow: var(--shadow-1);
   overflow: clip;
 }
+
 .card::before {
   /* soft gradient border */
   content: "";
@@ -130,11 +147,16 @@ body {
   text-align: center;
   box-shadow: var(--shadow-2);
 }
+
 .hero h2 {
   font-size: var(--step-4);
   margin: 0 0 .5rem;
 }
-.hero p { font-size: var(--step-0); color: var(--muted); }
+
+.hero p {
+  font-size: var(--step-0);
+  color: var(--muted);
+}
 
 @media (min-width: 900px) {
   .hero {
@@ -150,11 +172,16 @@ body {
   padding: clamp(1rem, 2vw, 1.5rem);
   box-shadow: var(--shadow-1);
 }
+
 .hero-extra h3 {
   margin: 0 0 .35rem;
   font-size: var(--step-2);
 }
-.hero-extra p { margin: 0; font-size: var(--step-0); }
+
+.hero-extra p {
+  margin: 0;
+  font-size: var(--step-0);
+}
 
 /* CTA */
 .cta-button {
@@ -172,9 +199,21 @@ body {
   box-shadow: 0 10px 28px rgba(37,99,235,.35);
   will-change: transform;
 }
-.cta-button:hover { transform: translateY(-1px); filter: brightness(1.05); }
-.cta-button:active { transform: translateY(0); filter: brightness(.98); }
-.cta-button:focus-visible { outline: none; box-shadow: var(--ring); }
+
+.cta-button:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+}
+
+.cta-button:active {
+  transform: translateY(0);
+  filter: brightness(.98);
+}
+
+.cta-button:focus-visible {
+  outline: none;
+  box-shadow: var(--ring);
+}
 
 /* ===========================
    Meetings + Location
@@ -183,6 +222,7 @@ body {
   display: grid;
   gap: clamp(1rem, 2vw, 1.5rem);
 }
+
 @media (min-width: 900px) {
   .info-sections { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
@@ -192,6 +232,7 @@ body {
   border-radius: var(--radius-lg);
   padding: clamp(1.25rem, 2.5vw, 2rem);
 }
+
 .meetings { background: var(--surface-2); }
 .location { background: var(--surface); }
 
@@ -200,14 +241,98 @@ body {
   margin: 0 0 .5rem;
   font-size: var(--step-2);
 }
+
 .meetings p,
 .location p,
-.address { margin: .2rem 0; color: var(--text); font-size: var(--step-0); }
-.address { font-style: normal; color: var(--muted); }
+.address {
+  margin: .2rem 0;
+  color: var(--text);
+  font-size: var(--step-0);
+}
+
+.address {
+  font-style: normal;
+  color: var(--muted);
+}
 
 /* Emoji icons accessibility */
 .meetings span[aria-hidden="true"],
-.location span[aria-hidden="true"] { filter: saturate(.9) opacity(.9); }
+.location span[aria-hidden="true"] {
+  filter: saturate(.9) opacity(.9);
+}
+
+/* ===========================
+   Photo highlights (Home teaser)
+=========================== */
+.photo-highlights.card {
+  border-radius: var(--radius-lg);
+  padding: clamp(1rem, 2.5vw, 1.5rem);
+}
+
+.photo-highlights__header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.photo-highlights__header h3 {
+  margin: 0;
+  font-size: var(--step-2);
+}
+
+.photo-highlights__link {
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  padding: .45rem .75rem;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 700;
+  color: #cfe5ff;
+  background: color-mix(in srgb, var(--surface-2) 85%, #000 15%);
+  border: 1px solid rgba(37,99,235,.35);
+  transition: transform .18s ease, filter .18s ease, box-shadow .18s ease;
+}
+
+.photo-highlights__link:hover {
+  text-decoration: none;
+  transform: translateY(-1px);
+  filter: brightness(1.06);
+}
+
+.photo-highlights__link:focus-visible {
+  outline: none;
+  box-shadow: var(--ring);
+}
+
+.photo-highlights__grid {
+  margin-top: 12px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.photo-highlights__img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--surface) 80%, #000 20%);
+  box-shadow: 0 10px 24px rgba(0,0,0,.25);
+  transition: transform .18s ease, filter .18s ease;
+}
+
+.photo-highlights__img:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.05);
+}
+
+@media (max-width: 900px) {
+  .photo-highlights__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
 
 /* ===========================
    Get VA Buddy block (dark-friendly)
@@ -223,7 +348,7 @@ body {
   box-shadow: var(--shadow-1);
 }
 
-.getvabuddy-section.card { /* keep your grid layout upgrade */
+.getvabuddy-section.card {
   display: grid;
   grid-template-columns: 128px 1fr;
   gap: 1rem;
@@ -231,11 +356,13 @@ body {
 }
 
 .getvabuddy-link {
-  display: contents;             /* lets the grid work while keeping the link */
+  display: contents;
   color: inherit;
   text-decoration: none;
 }
+
 .getvabuddy-link:focus-visible { outline: none; }
+
 .getvabuddy-section:has(.getvabuddy-link:focus-visible) {
   box-shadow: var(--shadow-1), var(--ring);
 }
@@ -249,15 +376,15 @@ body {
     radial-gradient(closest-side, rgba(255,255,255,.06), transparent 70%);
   box-shadow: 0 0 0 1px rgba(0,87,184,.25), 0 8px 28px rgba(0, 87, 184, .25);
 }
+
 @media (max-width: 520px) {
   .getvabuddy-section.card { grid-template-columns: 88px 1fr; }
   .buddy-logo { width: 88px; height: 88px; border-radius: 12px; }
 }
 
 /* ===========================
-   Golden image (720 x 720)
+   Golden image (fully responsive)
 =========================== */
-/* ===== Golden image (fully responsive) ===== */
 .golden-image-container {
   display: flex;
   justify-content: center;
@@ -267,8 +394,8 @@ body {
 .golden-image {
   display: block;
   width: 100%;
-  height: auto;             /* maintain natural proportions */
-  max-width: 100%;          /* never overflow its container */
+  height: auto;
+  max-width: 100%;
   border-radius: 20px;
   margin: 0 auto;
   background:
@@ -280,7 +407,6 @@ body {
     0 0 60px rgba(229,182,64,.18);
 }
 
-/* Tablets and small laptops */
 @media (max-width: 900px) {
   .golden-image-container {
     padding: 0.75rem;
@@ -294,10 +420,9 @@ body {
   }
 }
 
-/* Phones */
 @media (max-width: 600px) {
   .golden-image {
-    width: 94vw;           /* slightly smaller than viewport for side breathing room */
+    width: 94vw;
     border-radius: 12px;
     box-shadow:
       0 8px 28px rgba(0,0,0,.4),
@@ -306,21 +431,32 @@ body {
   }
 }
 
-  
-
 /* ===========================
    Utility
 =========================== */
-.hero-group { display: contents; } /* keep DOM simple; your hero stands alone */
+.hero-group { display: contents; }
 
 a { color: #9bc1ff; }
 a:hover { text-decoration: underline; }
-a:focus-visible { outline: none; box-shadow: var(--ring); border-radius: 8px; }
 
-small, .muted { color: var(--muted); font-size: var(--step--1); }
+a:focus-visible {
+  outline: none;
+  box-shadow: var(--ring);
+  border-radius: 8px;
+}
 
-/* Smooth edges on images */
-img { border-radius: 12px; }
+small, .muted {
+  color: var(--muted);
+  font-size: var(--step--1);
+}
+
+/* Targeted rounding (avoid global img rounding side-effects) */
+.photo-highlights__img,
+.golden-image,
+.buddy-logo,
+.hero img {
+  border-radius: 12px;
+}
 
 /* Optional: support for backdrop blur when available */
 @supports (backdrop-filter: blur(8px)) {
