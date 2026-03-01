@@ -105,6 +105,20 @@ body {
   .logo { width: 300px; }
 }
 
+
+.fundraiser-alert {
+  text-align: center;
+  padding: 1rem;
+  background-color: #0b2e4e; /* deep patriotic blue */
+}
+
+.fundraiser-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
 /* ===========================
    Cards (reusable)
 =========================== */

@@ -20,11 +20,29 @@ export default function Home() {
   return (
     <div className="home-container">
       {/* ===== Header: centered title ===== */}
-      <header className="header header--center-row">
+      {/* <header className="header header--center-row">
         <h1>DAV Chapter 18 — Augusta, GA</h1>
-      </header>
+      </header> */}
 
       <main>
+
+        {/* ===== Fundraiser Alert ===== */}
+<section className="fundraiser-alert">
+  <div className="fundraiser-text">
+    <h2>🎗 First 2026 Fundraiser – Saturday, March 7</h2>
+    <p>
+      Fort Gordon Commissary • 9 AM – 4 PM  
+      Volunteers appreciated — even for setup or breakdown!
+    </p>
+  </div>
+
+  <img
+    src="/fundraiser0307.png"
+    alt="DAV Chapter 18 Fundraiser at Fort Gordon Commissary"
+    className="fundraiser-image"
+  />
+</section>
+
         {/* ===== Hero ===== */}
         <section className="hero" aria-labelledby="hero-heading">
           <div className="hero-text">
