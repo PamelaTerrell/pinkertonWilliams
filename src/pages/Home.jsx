@@ -1,13 +1,19 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./Home.css";
 
 // Top images (optional – currently unused)
-import davLogo from "../assets/Doclogo.jpg";
+// import davLogo from "../assets/Doclogo.jpg";
 
 // Section images
 const BUDDY_LOGO_SRC = "/getvabuddy.png";
 const GOLDEN_IMAGE_SRC = "/golden.jpeg";
+
+const FUNDRAISER_HIGHLIGHTS = Array.from({ length: 8 }, (_, i) => ({
+  id: i + 1,
+  src: `/images/events/fundraiser/fund${i + 1}.JPG`,
+  alt: `DAV Chapter 18 Fort Gordon fundraiser photo ${i + 1}`,
+}));
 
 // Christmas highlights (show first 4 as teasers)
 const CHRISTMAS_HIGHLIGHTS = Array.from({ length: 4 }, (_, i) => ({
@@ -17,6 +23,44 @@ const CHRISTMAS_HIGHLIGHTS = Array.from({ length: 4 }, (_, i) => ({
 }));
 
 export default function Home() {
+  const [selectedIndex, setSelectedIndex] = useState(null);
+
+  const openLightbox = (index) => {
+    setSelectedIndex(index);
+  };
+
+  const closeLightbox = () => {
+    setSelectedIndex(null);
+  };
+
+  const showPrevious = () => {
+    setSelectedIndex((prev) =>
+      prev === 0 ? FUNDRAISER_HIGHLIGHTS.length - 1 : prev - 1
+    );
+  };
+
+  const showNext = () => {
+    setSelectedIndex((prev) =>
+      prev === FUNDRAISER_HIGHLIGHTS.length - 1 ? 0 : prev + 1
+    );
+  };
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (selectedIndex === null) return;
+
+      if (e.key === "Escape") closeLightbox();
+      if (e.key === "ArrowLeft") showPrevious();
+      if (e.key === "ArrowRight") showNext();
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [selectedIndex]);
+
+  const selectedImage =
+    selectedIndex !== null ? FUNDRAISER_HIGHLIGHTS[selectedIndex] : null;
+
   return (
     <div className="home-container">
       {/* ===== Header: centered title ===== */}
@@ -25,23 +69,8 @@ export default function Home() {
       </header> */}
 
       <main>
-
-        {/* ===== Fundraiser Alert ===== */}
-<section className="fundraiser-alert">
-  <div className="fundraiser-text">
-    <h2>🎗 First 2026 Fundraiser – Saturday, March 7</h2>
-    <p>
-      Fort Gordon Commissary • 9 AM – 4 PM  
-      Volunteers appreciated — even for setup or breakdown!
-    </p>
-  </div>
-
-  <img
-    src="/fundraiser0307.png"
-    alt="DAV Chapter 18 Fundraiser at Fort Gordon Commissary"
-    className="fundraiser-image"
-  />
-</section>
+        {/* Hidden H1 for accessibility/structure while visible header is temporarily removed */}
+        <h1 className="visually-hidden">DAV Chapter 18 — Augusta, GA</h1>
 
         {/* ===== Hero ===== */}
         <section className="hero" aria-labelledby="hero-heading">
@@ -57,10 +86,48 @@ export default function Home() {
           <div className="hero-extra">
             <h3>Our Mission</h3>
             <p>
-              Chapter 18 Pinkerton-Williams provides veterans and their families with
-              trusted support, resources, and fellowship. We’re here to ensure every
-              veteran receives the benefits they earned.
+              Chapter 18 Pinkerton-Williams provides veterans and their families
+              with trusted support, resources, and fellowship. We’re here to
+              ensure every veteran receives the benefits they earned.
             </p>
+          </div>
+        </section>
+
+        {/* ===== Fundraiser Highlights ===== */}
+        <section
+          className="photo-highlights card"
+          aria-labelledby="fundraiser-heading"
+        >
+          <div className="photo-highlights__header">
+            <div>
+              <h3 id="fundraiser-heading">
+                Fort Gordon Fundraiser Highlights — March 7, 2026
+              </h3>
+              <p className="muted">
+                Thank you to everyone who volunteered and supported DAV Chapter
+                18 at our fundraiser at the Fort Gordon Commissary.
+              </p>
+            </div>
+          </div>
+
+          <div className="photo-highlights__grid">
+            {FUNDRAISER_HIGHLIGHTS.map((p, index) => (
+              <button
+                key={p.id}
+                type="button"
+                className="photo-lightbox-trigger"
+                onClick={() => openLightbox(index)}
+                aria-label={`Open fundraiser photo ${p.id}`}
+              >
+                <img
+                  src={p.src}
+                  alt={p.alt}
+                  loading="lazy"
+                  decoding="async"
+                  className="photo-highlights__img"
+                />
+              </button>
+            ))}
           </div>
         </section>
 
@@ -69,16 +136,9 @@ export default function Home() {
           <div className="photo-highlights__header">
             <h3 id="xmas-heading">Christmas Party Highlights</h3>
 
-            {/* If you created the dedicated album route */}
             <Link to="/gallery/christmas-party" className="photo-highlights__link">
               View full album →
             </Link>
-
-            {/* If you haven't created the album page yet, use this instead:
-            <Link to="/events" className="photo-highlights__link">
-              View full album →
-            </Link>
-            */}
           </div>
 
           <div className="photo-highlights__grid">
@@ -151,7 +211,8 @@ export default function Home() {
             <div>
               <strong>Get VA Buddy</strong>
               <div className="muted">
-                Visit Get VA Buddy for easy help navigating VA forms and benefits online.
+                Visit Get VA Buddy for easy help navigating VA forms and benefits
+                online.
               </div>
             </div>
           </a>
@@ -168,6 +229,55 @@ export default function Home() {
           />
         </div>
       </main>
+
+      {/* ===== Lightbox ===== */}
+      {selectedImage && (
+        <div
+          className="lightbox-overlay"
+          onClick={closeLightbox}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Expanded fundraiser photo"
+        >
+          <div
+            className="lightbox-content"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              type="button"
+              className="lightbox-close"
+              onClick={closeLightbox}
+              aria-label="Close image"
+            >
+              ×
+            </button>
+
+            <button
+              type="button"
+              className="lightbox-nav lightbox-nav--left"
+              onClick={showPrevious}
+              aria-label="Previous image"
+            >
+              ‹
+            </button>
+
+            <img
+              src={selectedImage.src}
+              alt={selectedImage.alt}
+              className="lightbox-image"
+            />
+
+            <button
+              type="button"
+              className="lightbox-nav lightbox-nav--right"
+              onClick={showNext}
+              aria-label="Next image"
+            >
+              ›
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
