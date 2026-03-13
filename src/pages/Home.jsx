@@ -124,12 +124,26 @@ export default function Home() {
         =========================== */}
         <section className="news-banner card" aria-label="Featured chapter update">
           <div className="news-banner__inner">
-            <span className="news-banner__label">Featured Update</span>
-            <p className="news-banner__text">
-              A long-awaited veterans cemetery near Gracewood is moving forward
-              and represents one of the most meaningful developments for
-              veterans and families in our region.
-            </p>
+            <div className="news-banner__eyebrow-wrap">
+              <span className="news-banner__label">Featured Update</span>
+              <span className="news-banner__dot" aria-hidden="true"></span>
+              <span className="news-banner__tag">Augusta Veterans Cemetery</span>
+            </div>
+
+            <div className="news-banner__content">
+              <h3 className="news-banner__headline">
+                A long-awaited veterans cemetery near Gracewood is moving forward.
+              </h3>
+              <p className="news-banner__text">
+                This project represents one of the most meaningful developments
+                for veterans and families in our region and reflects years of
+                community advocacy.
+              </p>
+            </div>
+
+            <a href="#cemetery-heading" className="news-banner__link">
+              Learn more →
+            </a>
           </div>
         </section>
 

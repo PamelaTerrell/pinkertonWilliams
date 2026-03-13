@@ -245,7 +245,8 @@ a:focus-visible,
 .secondary-link-button:focus-visible,
 .photo-highlights__link:focus-visible,
 .photo-lightbox-trigger:focus-visible,
-.getvabuddy-banner__link:focus-visible {
+.getvabuddy-banner__link:focus-visible,
+.news-banner__link:focus-visible {
   outline: none;
   box-shadow: var(--ring);
   border-radius: 10px;
@@ -257,13 +258,23 @@ a:focus-visible,
 .news-banner {
   padding-top: 1rem;
   padding-bottom: 1rem;
+  background:
+    linear-gradient(135deg, rgba(229, 182, 64, 0.08), rgba(37, 99, 235, 0.08)),
+    color-mix(in srgb, var(--surface) 90%, #000 10%);
 }
 
 .news-banner__inner {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 1rem 1.25rem;
   align-items: center;
-  gap: 0.9rem 1rem;
+}
+
+.news-banner__eyebrow-wrap {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.55rem;
 }
 
 .news-banner__label {
@@ -272,7 +283,7 @@ a:focus-visible,
   white-space: nowrap;
   padding: 0.35rem 0.7rem;
   border-radius: 999px;
-  background: rgba(229, 182, 64, 0.12);
+  background: rgba(229, 182, 64, 0.14);
   color: var(--gold);
   border: 1px solid rgba(229, 182, 64, 0.28);
   font-size: 0.82rem;
@@ -281,10 +292,56 @@ a:focus-visible,
   text-transform: uppercase;
 }
 
+.news-banner__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.45);
+}
+
+.news-banner__tag {
+  color: var(--muted);
+  font-size: var(--step--1);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.news-banner__content {
+  min-width: 0;
+}
+
+.news-banner__headline {
+  margin: 0 0 0.2rem;
+  font-size: var(--step-1);
+  line-height: 1.35;
+  color: var(--text);
+}
+
 .news-banner__text {
   margin: 0;
-  color: var(--text);
+  color: var(--muted);
   font-size: var(--step-0);
+}
+
+.news-banner__link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  padding: 0.72rem 1rem;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(180deg, rgba(37, 99, 235, 0.95), rgba(29, 78, 216, 0.95));
+  box-shadow: 0 10px 24px rgba(37, 99, 235, 0.25);
+  transition: transform 0.18s ease, filter 0.18s ease;
+}
+
+.news-banner__link:hover {
+  text-decoration: none;
+  transform: translateY(-1px);
+  filter: brightness(1.05);
 }
 
 /* ===========================
@@ -874,7 +931,8 @@ small,
   .cemetery-feature__grid,
   .cemetery-history__grid,
   .cemetery-stats,
-  .cemetery-history__intro {
+  .cemetery-history__intro,
+  .news-banner__inner {
     grid-template-columns: 1fr;
   }
 
@@ -884,6 +942,10 @@ small,
 
   .photo-highlights__grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .news-banner__link {
+    justify-self: start;
   }
 }
 
