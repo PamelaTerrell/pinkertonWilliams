@@ -22,13 +22,7 @@ function App() {
     <>
       <NavBar />
 
-      <div style={{ textAlign: 'center', margin: '20px 0' }}>
-        <img 
-          src="/og-image.png"  // ✅ matches /public/images
-          alt="DAV Chapter 18" 
-          style={{ width: '300px', height: 'auto', display: 'block', margin: '0 auto' }} 
-        />
-      </div>
+     
 
       <Routes>
         <Route path="/" element={<Home />} />
