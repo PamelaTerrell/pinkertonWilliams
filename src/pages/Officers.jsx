@@ -4,7 +4,7 @@ import "./Officers.css";
 const officers = [
   { id: 1, name: "Alvin Terrell", title: "Commander", photo: "/assets/officers/AT.JPG" },
   { id: 2, name: "Ronald Holiday Sr", title: "Senior Vice Commander", photo: "/assets/officers/RonaldHolidaySr.jpg" },
-  { id: 3, name: "Eddie Thomas", title: "1st Junior Vice Commander", photo: "/assets/officers/ethomas.jpg" },
+  { id: 3, name: "Maggie Griffin", title: "1st Junior Vice Commander", photo: "/assets/officers/FemalePhotoComingSoon.png" },
   { id: 4, name: "Chris Walker", title: "2nd Junior Vice Commander", photo: "/assets/officers/ChrisWalker.jpg" },
   { id: 5, name: "Donna Thames", title: "Treasurer", photo: "/assets/officers/DonnaThames.jpg" },
   { id: 6, name: "Phylicia Fuller", title: "Adjutant", photo: "/assets/officers/PhyliciaFuller.jpg" },
