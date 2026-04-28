@@ -15,7 +15,7 @@ const officers = [
     id: 3,
     name: "Maggie Griffin",
     title: "1st Junior Vice Commander",
-    photo: "/assets/officers/FemalePhotoComingSoon.png",
+    photo: "/assets/officers/Maggie.png",
   },
 
   {
