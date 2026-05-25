@@ -23,6 +23,8 @@ const CHRISTMAS_HIGHLIGHTS = Array.from({ length: 4 }, (_, i) => ({
 // ==============================
 // External links
 // ==============================
+const CSRA_CEMETERY_URL = "https://csraveteranscemetery.org/";
+
 const CEMETERY_2026_ARTICLE_URL =
   "https://www.wrdw.com/2026/02/07/augusta-veterans-cemetery-receives-150-million-federal-funding/";
 
@@ -42,22 +44,22 @@ export default function Home() {
   const hasCemeteryEmbed = Boolean(CEMETERY_MEDIA_EMBED_URL);
 
   const cemeteryStats = useMemo(
-    () => [
-      {
-        label: "Location",
-        value: "Gracewood area / Tobacco Road",
-      },
-      {
-        label: "Why it matters",
-        value: "A lasting place of honor for veterans and families",
-      },
-      {
-        label: "Current momentum",
-        value: "Funding secured and development moving forward",
-      },
-    ],
-    []
-  );
+  () => [
+    {
+      label: "Purpose",
+      value: "Honor, remembrance, and reflection",
+    },
+    {
+      label: "Community",
+      value: "Serving veterans and families across the CSRA",
+    },
+    {
+      label: "Vision",
+      value: "A peaceful, permanent place worthy of those who served",
+    },
+  ],
+  []
+);
 
   const openLightbox = (index) => setSelectedIndex(index);
   const closeLightbox = () => setSelectedIndex(null);
@@ -119,152 +121,170 @@ export default function Home() {
           </div>
         </section>
 
+        
+     
+
         {/* ===========================
-            Featured News Banner
-        =========================== */}
-        <section className="news-banner card" aria-label="Featured chapter update">
-          <div className="news-banner__inner">
-            <div className="news-banner__eyebrow-wrap">
-              <span className="news-banner__label">Featured Update</span>
-              <span className="news-banner__dot" aria-hidden="true"></span>
-              <span className="news-banner__tag">Augusta Veterans Cemetery</span>
-            </div>
+    Featured Vision Banner
+=========================== */}
+<section className="news-banner card" aria-label="Featured community vision">
+  <div className="news-banner__inner">
+    <div className="news-banner__eyebrow-wrap">
+      <span className="news-banner__label">Featured Vision</span>
+      <span className="news-banner__dot" aria-hidden="true"></span>
+      <span className="news-banner__tag">CSRA Veterans Cemetery</span>
+    </div>
 
-            <div className="news-banner__content">
-              <h3 className="news-banner__headline">
-                A long-awaited veterans cemetery near Gracewood is moving forward.
-              </h3>
-              <p className="news-banner__text">
-                This project represents one of the most meaningful developments
-                for veterans and families in our region and reflects years of
-                community advocacy.
-              </p>
-            </div>
+    <div className="news-banner__content">
+      <h3 className="news-banner__headline">
+        A beautiful place of honor is being envisioned for CSRA veterans.
+      </h3>
+      <p className="news-banner__text">
+        The future Georgia Veterans Memorial Cemetery - Augusta is being shaped
+        as a peaceful place of remembrance, reflection, and dignity for veterans
+        and families across our region.
+      </p>
+    </div>
 
-            <a href="#cemetery-heading" className="news-banner__link">
-              Learn more →
+    <a href="#cemetery-heading" className="news-banner__link">
+      Explore the vision →
+    </a>
+  </div>
+</section>
+
+{/* ===========================
+    CSRA Veterans Cemetery Vision Feature
+=========================== */}
+<section
+  className="cemetery-feature card"
+  aria-labelledby="cemetery-heading"
+>
+  <div className="section-kicker">A Vision for Veterans and Families</div>
+
+  <div className="cemetery-feature__header">
+    <div>
+      <h3 id="cemetery-heading">
+        The Future Georgia Veterans Memorial Cemetery - Augusta
+      </h3>
+      <p className="muted">
+        A long-awaited place of honor, remembrance, and reflection is being
+        envisioned for veterans and families across the Central Savannah River
+        Area.
+      </p>
+    </div>
+  </div>
+
+  <div className="cemetery-feature__grid">
+    <div className="cemetery-feature__media">
+      {hasCemeteryEmbed ? (
+        <div className="cemetery-feature__video">
+          <iframe
+            src={CEMETERY_MEDIA_EMBED_URL}
+            title="Augusta Veterans Cemetery coverage"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            loading="lazy"
+          />
+        </div>
+      ) : (
+        <article className="cemetery-media-card">
+          <div className="cemetery-media-card__eyebrow">
+            The Vision
+          </div>
+
+          <h4>Designed with dignity and permanence in mind</h4>
+
+          <p>
+            The future Georgia Veterans Memorial Cemetery - Augusta is
+            envisioned as a peaceful place of reflection, respect, and community
+            remembrance.
+          </p>
+
+          <p>
+            Beautiful landscape design, ceremonial gathering areas, and
+            meaningful visual spaces will help create a setting worthy of those
+            who served.
+          </p>
+
+          <div className="cemetery-feature__actions">
+            <a
+              href={CSRA_CEMETERY_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="secondary-link-button"
+            >
+              View the Cemetery Vision
             </a>
           </div>
-        </section>
+        </article>
+      )}
+    </div>
 
-        {/* ===========================
-            Cemetery Feature
-        =========================== */}
-        <section
-          className="cemetery-feature card"
-          aria-labelledby="cemetery-heading"
+    <div className="cemetery-feature__content">
+      <p>
+        For generations, veterans and military families throughout the CSRA have
+        served our nation with courage, sacrifice, and distinction. This future
+        cemetery represents more than a project — it represents a lasting
+        commitment to honor their service close to home.
+      </p>
+
+      <p>
+        The vision for the cemetery includes a dignified final resting place for
+        veterans and eligible family members, along with a peaceful setting
+        where families, fellow veterans, and the community can gather, reflect,
+        and remember.
+      </p>
+
+      <p>
+        DAV Chapter 18 is proud to help share awareness of this meaningful
+        regional effort and encourage our community to learn more about the
+        vision taking shape for Augusta and the broader CSRA.
+      </p>
+
+      <div className="cemetery-feature__actions">
+        <a
+          href={CSRA_CEMETERY_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="cta-button"
         >
-          <div className="section-kicker">Major Community Development</div>
+          Learn More About the Vision
+        </a>
 
-          <div className="cemetery-feature__header">
-            <div>
-              <h3 id="cemetery-heading">
-                Augusta Veterans Cemetery Moving Forward
-              </h3>
-              <p className="muted">
-                A long-awaited development near Gracewood is gaining momentum
-                and represents an important milestone for veterans and families
-                across our region.
-              </p>
-            </div>
-          </div>
+        <a
+          href={CEMETERY_2026_ARTICLE_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="secondary-link-button"
+        >
+          Read Latest Coverage
+        </a>
 
-          <div className="cemetery-feature__grid">
-            <div className="cemetery-feature__media">
-              {hasCemeteryEmbed ? (
-                <div className="cemetery-feature__video">
-                  <iframe
-                    src={CEMETERY_MEDIA_EMBED_URL}
-                    title="Augusta Veterans Cemetery coverage"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    loading="lazy"
-                  />
-                </div>
-              ) : (
-                <article className="cemetery-media-card">
-                  <div className="cemetery-media-card__eyebrow">
-                    Chapter 18 in the story
-                  </div>
-                  <h4>From advocacy to action</h4>
-                  <p>
-                    Earlier WRDW coverage featured Alvin Terrell as local
-                    veterans and leaders toured an existing state veterans
-                    cemetery to help guide Augusta’s future project.
-                  </p>
-                  <p>
-                    That earlier reporting now connects directly to the current
-                    progress being made toward the cemetery planned near
-                    Gracewood.
-                  </p>
+        <a
+          href={CEMETERY_2021_ARTICLE_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="secondary-link-button"
+        >
+          View 2021 WRDW Story
+        </a>
+      </div>
+    </div>
+  </div>
 
-                  <div className="cemetery-feature__actions">
-                    <a
-                      href={CEMETERY_2021_ARTICLE_URL}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="secondary-link-button"
-                    >
-                      Read Early WRDW Coverage
-                    </a>
-                  </div>
-                </article>
-              )}
-            </div>
+  <div className="cemetery-stats">
+    {cemeteryStats.map((item) => (
+      <div className="cemetery-stat" key={item.label}>
+        <span className="cemetery-stat__label">{item.label}</span>
+        <strong>{item.value}</strong>
+      </div>
+    ))}
+  </div>
+</section>
 
-            <div className="cemetery-feature__content">
-              <p>
-                This project is one of the most meaningful developments for the
-                local veteran community in years. Once completed, the Augusta
-                veterans cemetery will provide a dignified resting place closer
-                to home for veterans and eligible family members throughout the
-                CSRA.
-              </p>
+          
 
-              <p>
-                For families in this area, that means a place of honor in our
-                own community rather than having to look farther away for a
-                state veterans cemetery.
-              </p>
-
-              <p>
-                DAV Chapter 18 has long supported this effort, and the story now
-                reflects both the years of advocacy behind it and the progress
-                now being made toward turning that vision into reality.
-              </p>
-
-              <div className="cemetery-feature__actions">
-                <a
-                  href={CEMETERY_2026_ARTICLE_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="cta-button"
-                >
-                  Read Latest Coverage
-                </a>
-
-                <a
-                  href={CEMETERY_2021_ARTICLE_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="secondary-link-button"
-                >
-                  View 2021 WRDW Story
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div className="cemetery-stats">
-            {cemeteryStats.map((item) => (
-              <div className="cemetery-stat" key={item.label}>
-                <span className="cemetery-stat__label">{item.label}</span>
-                <strong>{item.value}</strong>
-              </div>
-            ))}
-          </div>
-        </section>
 
         {/* ===========================
             Why This Matters
