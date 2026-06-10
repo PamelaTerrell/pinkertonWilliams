@@ -252,6 +252,48 @@ a:focus-visible,
   border-radius: 10px;
 }
 
+.upcoming-fundraiser {
+  overflow: hidden;
+  padding: 1.25rem;
+}
+
+.upcoming-fundraiser__image-wrap {
+  max-width: 850px;
+  margin: 0 auto;
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.upcoming-fundraiser__image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.upcoming-fundraiser__content {
+  max-width: 850px;
+  margin: 1rem auto 0;
+  text-align: center;
+}
+
+.upcoming-fundraiser__content h3 {
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 700px) {
+  .upcoming-fundraiser {
+    padding: 0.85rem;
+  }
+
+  .upcoming-fundraiser__image-wrap {
+    border-radius: 14px;
+  }
+
+  .upcoming-fundraiser__content {
+    text-align: left;
+  }
+}
+
 /* ===========================
    Featured news banner
 =========================== */

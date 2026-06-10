@@ -121,6 +121,32 @@ export default function Home() {
           </div>
         </section>
 
+
+
+        {/* ===========================
+    Upcoming Fundraiser Banner
+=========================== */}
+<section className="upcoming-fundraiser card" aria-labelledby="upcoming-fundraiser-heading">
+  <img
+    src="/images/events/fundraiser-june-13.png"
+    alt="DAV Chapter 18 Fundraiser on Saturday, June 13th at the Fort Gordon Commissary"
+    className="upcoming-fundraiser__image"
+    loading="eager"
+    decoding="async"
+  />
+
+  <div className="upcoming-fundraiser__content">
+    <div className="section-kicker">Upcoming Fundraiser</div>
+    <h3 id="upcoming-fundraiser-heading">
+      DAV Chapter 18 Fundraiser — Saturday, June 13th
+    </h3>
+    <p>
+      Join DAV Chapter 18 at the Fort Gordon Commissary and help support local
+      veterans and their families.
+    </p>
+  </div>
+</section>
+
         
      
 
@@ -188,36 +214,38 @@ export default function Home() {
           />
         </div>
       ) : (
+        
         <article className="cemetery-media-card">
-          <div className="cemetery-media-card__eyebrow">
-            The Vision
-          </div>
+  <div className="cemetery-media-card__eyebrow">
+    The Vision
+  </div>
 
-          <h4>Designed with dignity and permanence in mind</h4>
+  <h4>A place of honor close to home</h4>
 
-          <p>
-            The future Georgia Veterans Memorial Cemetery - Augusta is
-            envisioned as a peaceful place of reflection, respect, and community
-            remembrance.
-          </p>
+  <p>
+    The future Georgia Veterans Memorial Cemetery - Augusta represents a
+    meaningful step toward giving veterans and families across the CSRA a
+    peaceful place for remembrance, reflection, and dignity.
+  </p>
 
-          <p>
-            Beautiful landscape design, ceremonial gathering areas, and
-            meaningful visual spaces will help create a setting worthy of those
-            who served.
-          </p>
+  <p>
+    DAV Chapter 18 is proud to help share awareness of this important regional
+    vision as it continues to move forward.
+  </p>
 
-          <div className="cemetery-feature__actions">
-            <a
-              href={CSRA_CEMETERY_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="secondary-link-button"
-            >
-              View the Cemetery Vision
-            </a>
-          </div>
-        </article>
+  <div className="cemetery-feature__actions">
+    <a
+      href={CSRA_CEMETERY_URL}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="secondary-link-button"
+    >
+      Visit the Official Cemetery Website
+    </a>
+  </div>
+</article>
+         
+          
       )}
     </div>
 
