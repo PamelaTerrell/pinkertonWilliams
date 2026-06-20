@@ -8,8 +8,7 @@ import "./Home.css";
 const BUDDY_LOGO_SRC = "/getvabuddy.png";
 const GOLDEN_IMAGE_SRC = "/golden.jpeg";
 const CEMETERY_IMAGE_SRC = "/cemetery.png";
-const UPCOMING_FUNDRAISER_IMAGE_SRC =
-  "/images/events/fundraiser-june-13.png";
+const UPCOMING_COOKOUT_IMAGE_SRC = "/images/events/upcoming-cookout.png";
 
 const FUNDRAISER_HIGHLIGHTS = Array.from({ length: 8 }, (_, i) => ({
   id: i + 1,
@@ -124,17 +123,18 @@ export default function Home() {
           </div>
         </section>
 
+      
         {/* ===========================
-            Upcoming Fundraiser Banner
+            Upcoming Cookouts Banner
         =========================== */}
         <section
           className="upcoming-fundraiser card"
-          aria-labelledby="upcoming-fundraiser-heading"
+          aria-labelledby="upcoming-cookout-heading"
         >
           <div className="upcoming-fundraiser__image-wrap">
             <img
-              src={UPCOMING_FUNDRAISER_IMAGE_SRC}
-              alt="DAV Chapter 18 Fundraiser on Saturday, June 13th at the Fort Gordon Commissary"
+              src={UPCOMING_COOKOUT_IMAGE_SRC}
+              alt="DAV Pinkerton Williams Chapter 18 announcement for two upcoming cookouts at Georgia War Veterans Homes on July 18th in Milledgeville and August 15th in Augusta. Volunteers are welcomed to help serve veterans in the nursing homes."
               className="upcoming-fundraiser__image"
               loading="eager"
               decoding="async"
@@ -142,44 +142,23 @@ export default function Home() {
           </div>
 
           <div className="upcoming-fundraiser__content">
-            <div className="section-kicker">Upcoming Fundraiser</div>
-            <h3 id="upcoming-fundraiser-heading">
-              DAV Chapter 18 Fundraiser — Saturday, June 13th
+            <div className="section-kicker">Upcoming Cookouts</div>
+            <h3 id="upcoming-cookout-heading">
+              DAV Chapter 18 Cookouts — Volunteers Welcomed
             </h3>
             <p>
-              Join DAV Chapter 18 at the Fort Gordon Commissary and help support
-              local veterans and their families.
+              DAV Pinkerton-Williams Chapter 18 invites volunteers to help serve
+              veterans at two upcoming Georgia War Veterans Home cookouts in
+              Milledgeville and Augusta.
             </p>
           </div>
         </section>
 
-        {/* ===========================
-            Featured Vision Banner
-        =========================== */}
-        <section className="news-banner card" aria-label="Featured community vision">
-          <div className="news-banner__inner">
-            <div className="news-banner__eyebrow-wrap">
-              <span className="news-banner__label">Featured Vision</span>
-              <span className="news-banner__dot" aria-hidden="true"></span>
-              <span className="news-banner__tag">CSRA Veterans Cemetery</span>
-            </div>
 
-            <div className="news-banner__content">
-              <h3 className="news-banner__headline">
-                A beautiful place of honor is being envisioned for CSRA veterans.
-              </h3>
-              <p className="news-banner__text">
-                The future Georgia Veterans Memorial Cemetery - Augusta is being
-                shaped as a peaceful place of remembrance, reflection, and
-                dignity for veterans and families across our region.
-              </p>
-            </div>
+        
 
-            <a href="#cemetery-heading" className="news-banner__link">
-              Explore the vision →
-            </a>
-          </div>
-        </section>
+       
+    
 
         {/* ===========================
             CSRA Veterans Cemetery Vision Feature
