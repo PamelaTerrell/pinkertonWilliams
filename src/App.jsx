@@ -8,6 +8,7 @@ import Events from './pages/Events.jsx'
 import PurpleHeartHonoree from './pages/PurpleHeart.jsx'
 import Membership from './pages/Membership.jsx'
 import ChristmasPartyGallery from './pages/ChristmasPartyGallery.jsx'
+import Contact from './pages/Contact.jsx'
 
 import NavBar from './components/NavBar.jsx'
 import Footer from './components/Footer.jsx'
@@ -40,6 +41,7 @@ function App() {
         <Route path="/purple-heart-honoree" element={<PurpleHeartHonoree />} />
         <Route path="/membership" element={<Membership />} />
         <Route path="/gallery/christmas-party" element={<ChristmasPartyGallery />} />
+        <Route path="/contact" element={<Contact />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
 

@@ -19,38 +19,55 @@ export default function NavBar() {
           </Link>
         </div>
 
-        <button className="menu-toggle" onClick={toggleMenu} aria-label="Toggle menu">
-          &#9776; {/* Unicode hamburger icon */}
+        <button
+          className="menu-toggle"
+          onClick={toggleMenu}
+          aria-label="Toggle menu"
+        >
+          &#9776;
         </button>
 
         <ul className={`nav-links ${menuOpen ? 'open' : ''}`}>
-  <li>
-    <Link to="/" className="nav-link" onClick={() => setMenuOpen(false)}>
-      Home
-    </Link>
-  </li>
-  <li>
-    <Link to="/officers" className="nav-link" onClick={() => setMenuOpen(false)}>
-      Officers
-    </Link>
-  </li>
-  <li>
-    <Link to="/events" className="nav-link" onClick={() => setMenuOpen(false)}>
-      Events
-    </Link>
-  </li>
-  <li>
-    <Link to="/purple-heart-honoree" className="nav-link" onClick={() => setMenuOpen(false)}>
-      Purple Heart Honoree
-    </Link>
-  </li>
-  <li>
-    <Link to="/membership" className="nav-link" onClick={() => setMenuOpen(false)}>
-      Membership
-    </Link>
-  </li>
-</ul>
+          <li>
+            <Link to="/" className="nav-link" onClick={() => setMenuOpen(false)}>
+              Home
+            </Link>
+          </li>
 
+          <li>
+            <Link to="/officers" className="nav-link" onClick={() => setMenuOpen(false)}>
+              Officers
+            </Link>
+          </li>
+
+          <li>
+            <Link to="/events" className="nav-link" onClick={() => setMenuOpen(false)}>
+              Events
+            </Link>
+          </li>
+
+          <li>
+            <Link
+              to="/purple-heart-honoree"
+              className="nav-link"
+              onClick={() => setMenuOpen(false)}
+            >
+              Purple Heart Honoree
+            </Link>
+          </li>
+
+          <li>
+            <Link to="/membership" className="nav-link" onClick={() => setMenuOpen(false)}>
+              Membership
+            </Link>
+          </li>
+
+          <li>
+            <Link to="/contact" className="nav-link" onClick={() => setMenuOpen(false)}>
+              Contact
+            </Link>
+          </li>
+        </ul>
       </div>
     </nav>
   );
