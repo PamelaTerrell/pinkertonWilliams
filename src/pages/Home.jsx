@@ -155,7 +155,43 @@ export default function Home() {
         </section>
 
 
-        
+        <section className="convention-section">
+  <div className="convention-card">
+    <div className="convention-image-wrap">
+      <img
+        src="/images/events/2026-national-convention.png"
+        alt="DAV and Auxiliary 2026 National Convention in Orlando"
+        className="convention-image"
+      />
+    </div>
+
+    <div className="convention-content">
+      <p className="section-kicker">National DAV Event</p>
+
+      <h2>2026 DAV National Convention</h2>
+
+      <p>
+        The 2026 DAV & Auxiliary National Convention will be held in Orlando,
+        Florida from Saturday, August 1 through Tuesday, August 4, 2026.
+      </p>
+
+      <p>
+        Members who are interested in attending can view convention details,
+        hotel information, registration updates, and official event information
+        directly from DAV.
+      </p>
+
+      <a
+        href="https://www.dav.org/events/2026-national-convention/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="convention-button"
+      >
+        View 2026 National Convention Details
+      </a>
+    </div>
+  </div>
+</section>
 
        
     
