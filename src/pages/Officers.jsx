@@ -67,6 +67,14 @@ const officers = [
     photo: "/assets/officers/PJT.png",
     link: "https://pamelajterrell.com",
   },
+
+{
+  id: 11,
+  name: "Paul T. Sylas",
+  title: "Chaplain",
+  photo: "/assets/officers/PaulTSylas.jpg",
+},
+
 ];
 
 export default function Officers() {
