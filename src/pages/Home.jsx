@@ -497,8 +497,8 @@ export default function Home() {
             </p>
             <p>
               <span aria-hidden="true">📍 </span>
-              Venue: <strong>Paine College Chapel</strong>, 15th St., Augusta,
-              GA
+              Venue: <strong>VFW 649</strong>, 2430 Windsor Spring Rd, Augusta,
+              GA 30906
             </p>
             <p>
               <span aria-hidden="true">🕒 </span>
