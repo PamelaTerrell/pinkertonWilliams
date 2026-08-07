@@ -1,21 +1,34 @@
-
 import React from "react";
 import "./Contact.css";
 
 export default function Contact() {
   return (
     <main className="contact-page">
-      <section className="contact-hero card">
-        <div className="section-kicker">Contact DAV Chapter 18</div>
+      <section className="contact-hero">
+  <p className="contact-eyebrow">Contact DAV Chapter 18</p>
 
-        <h1>Send Us a Message or Question</h1>
+  <h1>Send Us a Message or Question</h1>
 
-        <p>
-          Have a question about DAV Chapter 18, membership, upcoming events,
-          volunteering, or ways to support local veterans? Use the form below
-          and someone from the chapter will follow up when possible.
-        </p>
-      </section>
+  <p className="contact-intro">
+    Have a question about DAV Chapter 18, membership, upcoming events,
+    volunteering, or ways to support local veterans? Use the form below
+    and someone from the chapter will follow up when possible.
+  </p>
+
+  <div className="contact-email-card">
+    <div className="contact-email-icon" aria-hidden="true">
+      ✉
+    </div>
+
+    <div>
+      <span className="contact-email-label">Email DAV Chapter 18</span>
+
+      <a href="mailto:chapter18dav@pinkertonwilliams.org">
+        chapter18dav@pinkertonwilliams.org
+      </a>
+    </div>
+  </div>
+</section>
 
       <section className="contact-form-section card">
         <form
@@ -92,4 +105,3 @@ export default function Contact() {
     </main>
   );
 }
-
