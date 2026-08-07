@@ -80,22 +80,10 @@ const officers = [
 export default function Officers() {
   return (
     <div className="officers-container">
-      <header className="officers-header">
-        <h1>DAV Chapter 18 – Augusta, Georgia</h1>
-        <h2>2026–2027 Elected Officers</h2>
-
-        <p className="officers-subtitle">
-          Congratulations to our newly elected and reelected officers.
-          Thank you for your continued service to veterans and our community.
-        </p>
-
-        <img
-          src="/assets/officers/congratulations-banner.png"
-          alt="Congratulations to our newly elected and reelected officers"
-          className="officers-banner"
-          loading="lazy"
-        />
-      </header>
+     <p className="officers-subtitle">
+  Our chapter officers are proud to serve DAV Chapter 18 and work together
+  in support of veterans, their families, and our community.
+</p>
 
       <div className="officers-grid">
         {officers.map(({ id, name, title, photo, link }) => (
