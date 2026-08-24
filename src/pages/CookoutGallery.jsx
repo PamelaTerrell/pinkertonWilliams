@@ -36,6 +36,8 @@ export default function CookoutGallery() {
             src={src}
             alt={alt}
             className="cookout-image"
+            loading="lazy"
+            decoding="async"
           />
         ))}
       </Masonry>
