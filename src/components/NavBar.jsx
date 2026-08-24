@@ -23,11 +23,13 @@ export default function NavBar() {
           className="menu-toggle"
           onClick={toggleMenu}
           aria-label="Toggle menu"
+          aria-expanded={menuOpen}
+          aria-controls="primary-navigation-menu"
         >
           &#9776;
         </button>
 
-        <ul className={`nav-links ${menuOpen ? 'open' : ''}`}>
+        <ul id="primary-navigation-menu" className={`nav-links ${menuOpen ? 'open' : ''}`}>
           <li>
             <Link to="/" className="nav-link" onClick={() => setMenuOpen(false)}>
               Home
