@@ -2,7 +2,7 @@ import React from "react";
 import Masonry from "react-masonry-css";
 import "./CookoutGallery.css";
 
-const images = Array.from({ length: 37 }, (_, i) => ({
+const images = Array.from({ length: 38 }, (_, i) => ({
     src: `/gw-cookout/GW${i + 2}.JPG`,
     alt: `Cookout Photo ${i + 2}`,
   }));
