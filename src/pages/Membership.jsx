@@ -9,7 +9,7 @@ function Membership() {
 
       <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
         <img
-          src="/AugustMembership.png"   // 👈 file should be in /public
+          src="/AugustMembership.jpg"   // 👈 file should be in /public
           alt="August Membership Drawing Winner"
           style={{ maxWidth: '100%', height: 'auto', borderRadius: '12px', boxShadow: '0 4px 12px rgba(0,0,0,0.15)' }}
         />
