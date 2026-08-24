@@ -79,11 +79,14 @@ const officers = [
 
 export default function Officers() {
   return (
-    <div className="officers-container">
-     <p className="officers-subtitle">
-  Our chapter officers are proud to serve DAV Chapter 18 and work together
-  in support of veterans, their families, and our community.
-</p>
+    <main className="officers-container">
+      <header className="officers-header">
+        <h1>Chapter Officers</h1>
+        <p className="officers-subtitle">
+          Our chapter officers are proud to serve DAV Chapter 18 and work together
+          in support of veterans, their families, and our community.
+        </p>
+      </header>
 
       <div className="officers-grid">
         {officers.map(({ id, name, title, photo, link }) => (
@@ -95,7 +98,7 @@ export default function Officers() {
               loading="lazy"
             />
 
-            <h3>{name}</h3>
+            <h2>{name}</h2>
             <p>{title}</p>
 
             {link && (
@@ -136,6 +139,6 @@ export default function Officers() {
           </span>
         </a>
       </section>
-    </div>
+    </main>
   );
 }
