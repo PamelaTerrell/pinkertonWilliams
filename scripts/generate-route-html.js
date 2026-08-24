@@ -239,7 +239,7 @@ const validateRoute = (route, metadata) => {
 
   const canonical = new URL(metadata.canonicalUrl);
   if (
-    canonical.origin !== "https://pinkertonwilliams.org" ||
+    canonical.origin !== "https://www.pinkertonwilliams.org" ||
     canonical.pathname !== route ||
     canonical.search ||
     canonical.hash

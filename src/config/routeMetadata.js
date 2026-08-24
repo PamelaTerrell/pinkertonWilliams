@@ -1,4 +1,4 @@
-const SITE_URL = "https://pinkertonwilliams.org";
+const SITE_URL = "https://www.pinkertonwilliams.org";
 const SOCIAL_IMAGE_URL = `${SITE_URL}/og-card.png`;
 
 export const routeMetadata = {
