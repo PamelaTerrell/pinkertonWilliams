@@ -1,4 +1,5 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { Link } from "react-router-dom";
 import "./Home.css";
 
@@ -38,9 +39,13 @@ const CEMETERY_MEDIA_EMBED_URL = "";
 
 export default function Home() {
   const [selectedIndex, setSelectedIndex] = useState(null);
+  const dialogRef = useRef(null);
+  const closeButtonRef = useRef(null);
+  const openerRef = useRef(null);
 
   const selectedImage =
     selectedIndex !== null ? FUNDRAISER_HIGHLIGHTS[selectedIndex] : null;
+  const isLightboxOpen = selectedIndex !== null;
 
   const hasCemeteryEmbed = Boolean(CEMETERY_MEDIA_EMBED_URL);
 
@@ -62,7 +67,10 @@ export default function Home() {
     []
   );
 
-  const openLightbox = (index) => setSelectedIndex(index);
+  const openLightbox = (index, event) => {
+    openerRef.current = event.currentTarget;
+    setSelectedIndex(index);
+  };
   const closeLightbox = () => setSelectedIndex(null);
 
   const showPrevious = () => {
@@ -78,17 +86,141 @@ export default function Home() {
   };
 
   useEffect(() => {
-    const handleKeyDown = (e) => {
-      if (selectedIndex === null) return;
+    if (!isLightboxOpen) return undefined;
 
-      if (e.key === "Escape") closeLightbox();
-      if (e.key === "ArrowLeft") showPrevious();
-      if (e.key === "ArrowRight") showNext();
+    const dialog = dialogRef.current;
+    const body = document.body;
+    const previousBodyOverflow = body.style.overflow;
+    const previousBodyPaddingRight = body.style.paddingRight;
+    const scrollbarWidth =
+      window.innerWidth - document.documentElement.clientWidth;
+    const bodyPaddingRight = Number.parseFloat(
+      window.getComputedStyle(body).paddingRight
+    );
+
+    closeButtonRef.current?.focus();
+
+    const backgroundElements = Array.from(body.children)
+      .filter(
+        (element) =>
+          element !== dialog &&
+          !["SCRIPT", "STYLE", "LINK"].includes(element.tagName)
+      )
+      .map((element) => ({
+        element,
+        inertValue: element.inert,
+        hadInertAttribute: element.hasAttribute("inert"),
+        inertAttributeValue: element.getAttribute("inert"),
+        hadAriaHidden: element.hasAttribute("aria-hidden"),
+        ariaHiddenValue: element.getAttribute("aria-hidden"),
+      }));
+
+    backgroundElements.forEach(({ element }) => {
+      element.inert = true;
+      element.setAttribute("aria-hidden", "true");
+    });
+
+    body.style.overflow = "hidden";
+    if (scrollbarWidth > 0) {
+      body.style.paddingRight = `${bodyPaddingRight + scrollbarWidth}px`;
+    }
+
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") {
+        e.preventDefault();
+        setSelectedIndex(null);
+        return;
+      }
+
+      if (e.key === "ArrowLeft") {
+        e.preventDefault();
+        setSelectedIndex((prev) =>
+          prev === 0 ? FUNDRAISER_HIGHLIGHTS.length - 1 : prev - 1
+        );
+        return;
+      }
+
+      if (e.key === "ArrowRight") {
+        e.preventDefault();
+        setSelectedIndex((prev) =>
+          prev === FUNDRAISER_HIGHLIGHTS.length - 1 ? 0 : prev + 1
+        );
+        return;
+      }
+
+      if (e.key !== "Tab" || !dialog) return;
+
+      const focusableElements = Array.from(
+        dialog.querySelectorAll(
+          'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'
+        )
+      ).filter(
+        (element) =>
+          !element.hidden &&
+          element.getAttribute("aria-hidden") !== "true" &&
+          element.getClientRects().length > 0
+      );
+
+      if (focusableElements.length === 0) {
+        e.preventDefault();
+        closeButtonRef.current?.focus();
+        return;
+      }
+
+      const firstElement = focusableElements[0];
+      const lastElement = focusableElements[focusableElements.length - 1];
+      const activeElement = document.activeElement;
+
+      if (e.shiftKey) {
+        if (activeElement === firstElement || !dialog.contains(activeElement)) {
+          e.preventDefault();
+          lastElement.focus();
+        }
+      } else if (
+        activeElement === lastElement ||
+        !dialog.contains(activeElement)
+      ) {
+        e.preventDefault();
+        firstElement.focus();
+      }
     };
 
     window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [selectedIndex]);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+      body.style.overflow = previousBodyOverflow;
+      body.style.paddingRight = previousBodyPaddingRight;
+
+      backgroundElements.forEach(
+        ({
+          element,
+          inertValue,
+          hadInertAttribute,
+          inertAttributeValue,
+          hadAriaHidden,
+          ariaHiddenValue,
+        }) => {
+          element.inert = inertValue;
+
+          if (hadInertAttribute) {
+            element.setAttribute("inert", inertAttributeValue ?? "");
+          } else {
+            element.removeAttribute("inert");
+          }
+
+          if (hadAriaHidden) {
+            element.setAttribute("aria-hidden", ariaHiddenValue ?? "");
+          } else {
+            element.removeAttribute("aria-hidden");
+          }
+        }
+      );
+
+      if (openerRef.current?.isConnected) {
+        openerRef.current.focus({ preventScroll: true });
+      }
+    };
+  }, [isLightboxOpen]);
 
   return (
     <div className="home-container">
@@ -359,7 +491,7 @@ export default function Home() {
                 key={photo.id}
                 type="button"
                 className="photo-lightbox-trigger"
-                onClick={() => openLightbox(index)}
+                onClick={(event) => openLightbox(index, event)}
                 aria-label={`Open fundraiser photo ${photo.id}`}
               >
                 <img
@@ -502,53 +634,57 @@ export default function Home() {
       {/* ===========================
           Lightbox
       =========================== */}
-      {selectedImage && (
-        <div
-          className="lightbox-overlay"
-          onClick={closeLightbox}
-          role="dialog"
-          aria-modal="true"
-          aria-label="Expanded fundraiser photo"
-        >
+      {selectedImage &&
+        createPortal(
           <div
-            className="lightbox-content"
-            onClick={(e) => e.stopPropagation()}
+            ref={dialogRef}
+            className="lightbox-overlay"
+            onClick={closeLightbox}
+            role="dialog"
+            aria-modal="true"
+            aria-label="Expanded fundraiser photo"
           >
-            <button
-              type="button"
-              className="lightbox-close"
-              onClick={closeLightbox}
-              aria-label="Close image"
+            <div
+              className="lightbox-content"
+              onClick={(e) => e.stopPropagation()}
             >
-              ×
-            </button>
+              <button
+                ref={closeButtonRef}
+                type="button"
+                className="lightbox-close"
+                onClick={closeLightbox}
+                aria-label="Close image"
+              >
+                ×
+              </button>
 
-            <button
-              type="button"
-              className="lightbox-nav lightbox-nav--left"
-              onClick={showPrevious}
-              aria-label="Previous image"
-            >
-              ‹
-            </button>
+              <button
+                type="button"
+                className="lightbox-nav lightbox-nav--left"
+                onClick={showPrevious}
+                aria-label="Previous image"
+              >
+                ‹
+              </button>
 
-            <img
-              src={selectedImage.src}
-              alt={selectedImage.alt}
-              className="lightbox-image"
-            />
+              <img
+                src={selectedImage.src}
+                alt={selectedImage.alt}
+                className="lightbox-image"
+              />
 
-            <button
-              type="button"
-              className="lightbox-nav lightbox-nav--right"
-              onClick={showNext}
-              aria-label="Next image"
-            >
-              ›
-            </button>
-          </div>
-        </div>
-      )}
+              <button
+                type="button"
+                className="lightbox-nav lightbox-nav--right"
+                onClick={showNext}
+                aria-label="Next image"
+              >
+                ›
+              </button>
+            </div>
+          </div>,
+          document.body
+        )}
     </div>
   );
 }
