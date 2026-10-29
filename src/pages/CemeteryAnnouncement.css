@@ -1,0 +1,161 @@
+
+/* ==========================================
+   DAV CHAPTER 18
+   Veterans Cemetery Groundbreaking
+   November 13, 2026
+   ========================================== */
+
+.groundbreaking-announcement {
+  margin: 2rem 0;
+  padding: clamp(1.35rem, 3.5vw, 2.5rem);
+  color: #f7f9fc;
+  background: linear-gradient(
+    130deg,
+    #102b4a 0%,
+    #183e63 65%,
+    #23516d 100%
+  );
+  border: 1px solid rgba(220, 191, 117, 0.6);
+  border-radius: 18px;
+  box-shadow: 0 12px 28px rgba(12, 32, 50, 0.16);
+}
+
+/* Small announcement heading */
+
+.groundbreaking-announcement__eyebrow {
+  color: #f0d69d;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+/* Main layout */
+
+.groundbreaking-announcement__layout {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.7fr)
+    minmax(235px, 1fr);
+  gap: clamp(1.2rem, 4vw, 3rem);
+  align-items: start;
+}
+
+/* Main title */
+
+.groundbreaking-announcement h2 {
+  color: #ffffff;
+  font-size: clamp(1.65rem, 3vw, 2.35rem);
+  line-height: 1.18;
+  margin: 0 0 1rem;
+}
+
+/* Description */
+
+.groundbreaking-announcement p {
+  color: #edf3f8;
+  line-height: 1.65;
+}
+
+.groundbreaking-announcement__lead {
+  font-size: 1.12rem;
+}
+
+/* RSVP button container */
+
+.groundbreaking-announcement__actions {
+  margin-top: 1.5rem;
+}
+
+/* RSVP button */
+
+.groundbreaking-announcement__button {
+  display: inline-flex;
+  gap: 0.75rem;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85rem 1.2rem;
+  background: #f0ce7c;
+  color: #142d43;
+  font-weight: 750;
+  border-radius: 9px;
+  text-decoration: none;
+  transition:
+    background 0.15s ease,
+    transform 0.15s ease;
+}
+
+.groundbreaking-announcement__button:hover {
+  background: #ffe3a1;
+  transform: translateY(-1px);
+}
+
+.groundbreaking-announcement__button:focus-visible {
+  outline: 3px solid #ffffff;
+  outline-offset: 4px;
+}
+
+/* Event information panel */
+
+.groundbreaking-announcement__details {
+  padding: 1.3rem;
+  background: rgba(255, 255, 255, 0.095);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 12px;
+  display: grid;
+  gap: 1rem;
+}
+
+.groundbreaking-announcement__details > div {
+  display: grid;
+  gap: 0.15rem;
+}
+
+.groundbreaking-announcement__details strong {
+  color: #ffffff;
+}
+
+.groundbreaking-announcement__details span {
+  color: #f4f6fa;
+}
+
+/* Event detail labels */
+
+.groundbreaking-announcement__label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #f0d69d !important;
+}
+
+/* Additional information */
+
+.groundbreaking-announcement__note {
+  margin: 0.2rem 0 0;
+  font-size: 0.9rem;
+}
+
+/* ==========================================
+   MOBILE RESPONSIVENESS
+   ========================================== */
+
+@media (max-width: 720px) {
+  .groundbreaking-announcement__layout {
+    grid-template-columns: 1fr;
+  }
+
+  .groundbreaking-announcement__button {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Accessibility: Reduced Motion */
+
+@media (prefers-reduced-motion: reduce) {
+  .groundbreaking-announcement__button {
+    transition: none;
+  }
+}

@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { Link } from "react-router-dom";
 import "./Home.css";
+import "./CemeteryAnnouncement.css";
 
 // ==============================
 // Assets
@@ -26,6 +27,8 @@ const CHRISTMAS_HIGHLIGHTS = Array.from({ length: 4 }, (_, i) => ({
 // External links
 // ==============================
 const CSRA_CEMETERY_URL = "https://csraveteranscemetery.org/";
+const GROUNDBREAKING_EVENT_URL =
+  "https://veterans.georgia.gov/events/2026-11-13/gvmc-augusta-groundbreaking-ceremony";
 
 const CEMETERY_2026_ARTICLE_URL =
   "https://www.wrdw.com/2026/02/07/augusta-veterans-cemetery-receives-150-million-federal-funding/";
@@ -255,23 +258,77 @@ export default function Home() {
         </section>
 
         {/* ===========================
+            Official cemetery groundbreaking announcement
+        =========================== */}
+        <section className="groundbreaking-announcement" aria-labelledby="groundbreaking-heading">
+          <div className="groundbreaking-announcement__eyebrow">
+            Upcoming Event · Community Announcement
+          </div>
+          <div className="groundbreaking-announcement__layout">
+            <div className="groundbreaking-announcement__main">
+              <h2 id="groundbreaking-heading">
+                Augusta Veterans Cemetery Groundbreaking Ceremony
+              </h2>
+              <p className="groundbreaking-announcement__lead">
+                A milestone years in the making. Join the Georgia Department of
+                Veterans Service as our community marks the groundbreaking of
+                the new Georgia Veterans Memorial Cemetery – Augusta.
+              </p>
+              <p>
+                DAV Pinkerton-Williams Chapter 18 is pleased to share this
+                important occasion with local veterans, families, and supporters.
+              </p>
+              <div className="groundbreaking-announcement__actions">
+                <a
+                  href={GROUNDBREAKING_EVENT_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="groundbreaking-announcement__button"
+                >
+                  Official Event Details &amp; RSVP <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </div>
+            <div className="groundbreaking-announcement__details" aria-label="Ceremony details">
+              <div>
+                <span className="groundbreaking-announcement__label">Date</span>
+                <strong>Friday, November 13, 2026</strong>
+              </div>
+              <div>
+                <span className="groundbreaking-announcement__label">Time</span>
+                <strong>10:30–11:30 a.m. EST</strong>
+              </div>
+              <div>
+                <span className="groundbreaking-announcement__label">Location</span>
+                <strong>3780 Byrd Road</strong>
+                <span>Augusta, GA 30906</span>
+              </div>
+              <p className="groundbreaking-announcement__note">
+                Hosted by the Georgia Department of Veterans Service.
+                Parking directions will be announced by the organizer.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* ===========================
             CSRA Veterans Cemetery Vision Feature
         =========================== */}
         <section
           className="cemetery-feature card"
           aria-labelledby="cemetery-heading"
         >
-          <div className="section-kicker">A Vision for Veterans and Families</div>
+          <div className="section-kicker">A Milestone for Veterans and Families</div>
 
           <div className="cemetery-feature__header">
             <div>
               <h3 id="cemetery-heading">
-                The Future Georgia Veterans Memorial Cemetery - Augusta
+                Georgia Veterans Memorial Cemetery – Augusta
               </h3>
               <p className="muted">
-                A long-awaited place of honor, remembrance, and reflection is
-                being envisioned for veterans and families across the Central
-                Savannah River Area.
+                After years of community advocacy, the cemetery is approaching its
+                November 13, 2026 groundbreaking — a meaningful milestone for
+                veterans and families across the Central Savannah River Area.
               </p>
             </div>
           </div>
@@ -306,7 +363,7 @@ export default function Home() {
                   <h4>A place of honor close to home</h4>
 
                   <p>
-                    The future Georgia Veterans Memorial Cemetery - Augusta
+                    The planned Georgia Veterans Memorial Cemetery – Augusta
                     represents a meaningful step toward giving veterans and
                     families across the CSRA a peaceful place for remembrance,
                     reflection, and dignity.
@@ -314,7 +371,7 @@ export default function Home() {
 
                   <p>
                     DAV Chapter 18 is proud to help share awareness of this
-                    important regional vision as it continues to move forward.
+                    important regional project as it moves toward groundbreaking.
                   </p>
 
                   <div className="cemetery-feature__actions">
@@ -335,7 +392,7 @@ export default function Home() {
               <p>
                 For generations, veterans and military families throughout the
                 CSRA have served our nation with courage, sacrifice, and
-                distinction. This future cemetery represents more than a project
+                distinction. This cemetery project represents more than a development
                 — it represents a lasting commitment to honor their service
                 close to home.
               </p>
@@ -348,10 +405,9 @@ export default function Home() {
               </p>
 
               <p>
-                DAV Chapter 18 is proud to help share awareness of this
-                meaningful regional effort and encourage our community to learn
-                more about the vision taking shape for Augusta and the broader
-                CSRA.
+                DAV Chapter 18 is proud to share news of the upcoming
+                groundbreaking and encourage our community to learn more about
+                this important project for Augusta and the broader CSRA.
               </p>
 
               <div className="cemetery-feature__actions">
@@ -361,7 +417,7 @@ export default function Home() {
                   rel="noopener noreferrer"
                   className="cta-button"
                 >
-                  Learn More About the Vision
+                  Learn More About the Cemetery
                 </a>
 
                 <a
@@ -448,19 +504,19 @@ export default function Home() {
 
             <article className="timeline-card timeline-card--featured">
               <div className="timeline-card__year">Now</div>
-              <h4>The vision is moving closer to reality</h4>
+              <h4>Groundbreaking scheduled for November 2026</h4>
               <p>
-                More recent reporting points to major forward movement. What was
-                once an aspiration for this area is now becoming one of the most
-                significant veteran-focused developments in the region.
+                The Georgia Department of Veterans Service has announced a
+                groundbreaking ceremony for November 13, 2026. After years
+                of advocacy, the cemetery is reaching an important milestone.
               </p>
               <a
-                href={CEMETERY_2026_ARTICLE_URL}
+                href={GROUNDBREAKING_EVENT_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-link"
               >
-                Read the latest update →
+                View official groundbreaking details →
               </a>
             </article>
           </div>
