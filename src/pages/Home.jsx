@@ -270,24 +270,41 @@ export default function Home() {
                 Augusta Veterans Cemetery Groundbreaking Ceremony
               </h2>
               <p className="groundbreaking-announcement__lead">
-                A milestone years in the making. Join the Georgia Department of
-                Veterans Service as our community marks the groundbreaking of
-                the new Georgia Veterans Memorial Cemetery – Augusta.
-              </p>
-              <p>
-                DAV Pinkerton-Williams Chapter 18 is pleased to share this
-                important occasion with local veterans, families, and supporters.
-              </p>
-              <div className="groundbreaking-announcement__actions">
-                <a
-                  href={GROUNDBREAKING_EVENT_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="groundbreaking-announcement__button"
-                >
-                  Official Event Details &amp; RSVP <span aria-hidden="true">↗</span>
-                </a>
-              </div>
+  A milestone years in the making. Join the Georgia Department of Veterans
+  Service as our community marks the groundbreaking of the new Georgia
+  Veterans Memorial Cemetery – Augusta.
+</p>
+
+<p>
+  DAV Pinkerton-Williams Chapter 18 is pleased to share this important
+  occasion with local veterans, families, and supporters.
+</p>
+
+
+<figure className="groundbreaking-announcement__figure">
+  <img
+    src="/images/augusta-groundbreaking.png"
+    alt="Illustration of ceremonial golden shovels and American flags symbolizing the upcoming veterans cemetery groundbreaking"
+    className="groundbreaking-announcement__image"
+    loading="lazy"
+    decoding="async"
+  />
+  <figcaption className="groundbreaking-announcement__caption">
+    Illustrative image commemorating the upcoming groundbreaking.
+  </figcaption>
+</figure>
+
+
+<div className="groundbreaking-announcement__actions">
+  <a
+    href="https://veterans.georgia.gov/events/2026-11-13/gvmc-augusta-groundbreaking-ceremony"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="groundbreaking-announcement__button"
+  >
+    Official Event Details & RSVP ↗
+  </a>
+</div>
             </div>
             <div className="groundbreaking-announcement__details" aria-label="Ceremony details">
               <div>

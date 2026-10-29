@@ -39,7 +39,7 @@
     minmax(0, 1.7fr)
     minmax(235px, 1fr);
   gap: clamp(1.2rem, 4vw, 3rem);
-  align-items: start;
+  align-items: center;
 }
 
 /* Main title */
@@ -152,6 +152,17 @@
   }
 }
 
+.groundbreaking-announcement__image {
+  display: block;
+  width: 100%;
+  max-width: 620px;
+  height: auto;
+  border-radius: 12px;
+  border: 1px solid rgba(240, 206, 124, 0.35);
+  margin: 1.35rem 0 0;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.16);
+}
+
 /* Accessibility: Reduced Motion */
 
 @media (prefers-reduced-motion: reduce) {
@@ -159,3 +170,28 @@
     transition: none;
   }
 }
+
+
+/* Groundbreaking image and caption */
+
+.groundbreaking-announcement__figure {
+  margin: 1.35rem 0 0;
+  max-width: 720px;
+}
+
+.groundbreaking-announcement__figure
+.groundbreaking-announcement__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+}
+
+.groundbreaking-announcement__caption {
+  margin-top: 0.55rem;
+  color: #c4cfdd;
+  font-size: 0.8rem;
+  font-style: italic;
+  line-height: 1.5;
+}
+
